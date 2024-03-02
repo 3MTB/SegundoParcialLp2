@@ -5,6 +5,13 @@ namespace SegundoParcialLp2
 		public Form1()
 		{
 			InitializeComponent();
+
+
+
+
+
+
+			//hola commente
 		}
 	}
 }
