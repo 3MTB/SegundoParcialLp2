@@ -14,7 +14,8 @@ namespace SegundoParcialLp2
 			// see https://aka.ms/applicationconfiguration.
 			ApplicationConfiguration.Initialize();
 			var f = new TestIngDb();
-			Application.Run(f);
+			var DBoard = new DashBoard();
+			Application.Run(DBoard);
 
 			//EURYYYYY
 			//hola fra
