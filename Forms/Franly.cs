@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using SegundoParcialLp2.Data;
 namespace SegundoParcialLp2.Forms
 {
-    public partial class Franly : Form
-    {
-        public Franly()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class Eury : Form
+	{
+		public Eury()
+		{
+			InitializeComponent();
+		}
+	}
 }
