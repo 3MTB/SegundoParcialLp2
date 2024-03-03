@@ -13,7 +13,7 @@ namespace SegundoParcialLp2
 			ApplicationConfiguration.Initialize();
 			Application.Run(new Form1());
 
-
+			//EURYYYYY
 			//hola fra
 		}
 	}
