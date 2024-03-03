@@ -13,7 +13,7 @@ namespace SegundoParcialLp2.Data
 	{
 
 		// "Server=DRAKO\\SQLEXPRESS; Database=rentcargokudemon; Trusted_Connection=True;TrustServerCertificate=True")
-		private static string conectionString { get; set; }
+		private static string? conectionString { get; set; }
 		private static SqlConnection conexGeneral = new SqlConnection();
 
 		public AmbarDataBase(bool isFranly)
