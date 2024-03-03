@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SegundoParcialLp2.Forms.UC
+namespace SegundoParcialLp2.Forms
 {
-    public partial class UC_Empleados : UserControl
+    public partial class FrmEmpleados : Form
     {
-        public UC_Empleados()
+        public FrmEmpleados()
         {
             InitializeComponent();
-        }
-
-        private void UC_Empleados_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

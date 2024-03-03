@@ -40,7 +40,7 @@
             btnAjustes = new Button();
             label1 = new Label();
             pbClose = new PictureBox();
-            panel3 = new Panel();
+            panelDesk = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -129,6 +129,7 @@
             btnEmpleados.Text = "Empleados";
             btnEmpleados.TextAlign = ContentAlignment.BottomCenter;
             btnEmpleados.UseVisualStyleBackColor = true;
+            btnEmpleados.Click += btnEmpleados_Click;
             // 
             // btnInicio
             // 
@@ -146,6 +147,7 @@
             btnInicio.Text = "Inicio";
             btnInicio.TextAlign = ContentAlignment.BottomCenter;
             btnInicio.UseVisualStyleBackColor = true;
+            btnInicio.Click += btnInicio_Click;
             // 
             // pictureBox1
             // 
@@ -206,13 +208,14 @@
             pbClose.SizeMode = PictureBoxSizeMode.StretchImage;
             pbClose.TabIndex = 8;
             pbClose.TabStop = false;
+            pbClose.Click += pbClose_Click;
             // 
-            // panel3
+            // panelDesk
             // 
-            panel3.Location = new Point(343, 168);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(836, 693);
-            panel3.TabIndex = 9;
+            panelDesk.Location = new Point(343, 168);
+            panelDesk.Name = "panelDesk";
+            panelDesk.Size = new Size(836, 693);
+            panelDesk.TabIndex = 9;
             // 
             // DashBoard
             // 
@@ -220,7 +223,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1286, 873);
-            Controls.Add(panel3);
+            Controls.Add(panelDesk);
             Controls.Add(pbClose);
             Controls.Add(label1);
             Controls.Add(panel2);
@@ -252,6 +255,6 @@
         private Button btnAjustes;
         private Label label1;
         private PictureBox pbClose;
-        private Panel panel3;
+        private Panel panelDesk;
     }
 }
