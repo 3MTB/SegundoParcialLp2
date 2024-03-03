@@ -20,7 +20,7 @@ namespace SegundoParcialLp2.Data
 		{
 			if (isFranly)
 			{
-				conectionString = "Server=DESKTOP-SQ41TDR\\SQLEXPRESS01; Database=Ambar; Trusted_Connection=True;TrustServerCertificate=True";
+				conectionString = "Server=DESKTOP-SQ41TDR\\SQLEXPRESS01; Database=Ambardb; Trusted_Connection=True;TrustServerCertificate=True";
 			}
 			else
 			{
