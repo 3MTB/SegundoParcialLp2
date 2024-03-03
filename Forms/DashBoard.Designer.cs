@@ -78,6 +78,7 @@
             btnGastos.Text = "Gastos";
             btnGastos.TextAlign = ContentAlignment.BottomCenter;
             btnGastos.UseVisualStyleBackColor = true;
+            btnGastos.Click += btnGastos_Click;
             // 
             // btnCxC
             // 
@@ -95,6 +96,7 @@
             btnCxC.Text = "CxC";
             btnCxC.TextAlign = ContentAlignment.BottomCenter;
             btnCxC.UseVisualStyleBackColor = true;
+            btnCxC.Click += btnCxC_Click;
             // 
             // btnNomina
             // 
@@ -112,6 +114,7 @@
             btnNomina.Text = "Nomina";
             btnNomina.TextAlign = ContentAlignment.BottomCenter;
             btnNomina.UseVisualStyleBackColor = true;
+            btnNomina.Click += btnNomina_Click;
             // 
             // btnEmpleados
             // 

@@ -42,7 +42,7 @@ namespace SegundoParcialLp2.Forms
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmEmpleados(), sender);
+            OpenChildForm(new FrmEmpleados(), sender);
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -52,6 +52,21 @@ namespace SegundoParcialLp2.Forms
                 activateForm.Close();
                 LbT_NameVtn.Text = "Inicio";
             }
+        }
+
+        private void btnGastos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmGastos(), sender);
+        }
+
+        private void btnCxC_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmCxC(), sender);
+        }
+
+        private void btnNomina_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmNomina(), sender);
         }
     }
 }
