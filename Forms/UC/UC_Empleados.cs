@@ -16,5 +16,10 @@ namespace SegundoParcialLp2.Forms.UC
         {
             InitializeComponent();
         }
+
+        private void UC_Empleados_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
