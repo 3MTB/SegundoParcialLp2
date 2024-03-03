@@ -209,9 +209,9 @@
             // 
             // panel3
             // 
-            panel3.Location = new Point(214, 168);
+            panel3.Location = new Point(343, 168);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1066, 693);
+            panel3.Size = new Size(836, 693);
             panel3.TabIndex = 9;
             // 
             // DashBoard
