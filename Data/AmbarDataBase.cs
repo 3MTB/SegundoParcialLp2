@@ -26,7 +26,6 @@ namespace SegundoParcialLp2.Data
 			{
 				conectionString = "Server=DRAKO\\SQLEXPRESS; Database=Ambar; Trusted_Connection=True;TrustServerCertificate=True";
 			}
-			MessageBox.Show((isFranly ? "Franly" : "Eury"));
 
 		}
 		public SqlConnection? GetConection()
@@ -40,7 +39,6 @@ namespace SegundoParcialLp2.Data
 
 				conexGeneral.ConnectionString = conectionString;
 				conexGeneral.Open();
-
 				return conexGeneral;
 			}
 			catch (Exception e)
