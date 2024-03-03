@@ -32,6 +32,7 @@ namespace SegundoParcialLp2.Forms
             this.panelDesk.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            LbT_NameVtn.Text = childForm.Text;
         }
 
         private void pbClose_Click(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace SegundoParcialLp2.Forms
             if (activateForm != null)
             {
                 activateForm.Close();
+                LbT_NameVtn.Text = "Inicio";
             }
         }
     }

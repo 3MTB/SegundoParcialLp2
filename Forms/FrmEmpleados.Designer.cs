@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label11 = new Label();
             btnBorrar = new Button();
             btnClear = new Button();
             btnModificar = new Button();
@@ -56,16 +55,6 @@
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)DGV_Empleados).BeginInit();
             SuspendLayout();
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(331, 23);
-            label11.Name = "label11";
-            label11.Size = new Size(119, 23);
-            label11.TabIndex = 55;
-            label11.Text = "EMPLEADOS";
             // 
             // btnBorrar
             // 
@@ -315,7 +304,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 714);
-            Controls.Add(label11);
             Controls.Add(btnBorrar);
             Controls.Add(btnClear);
             Controls.Add(btnModificar);
@@ -344,15 +332,13 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmEmpleados";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmEmpleados";
+            Text = "Empleados";
             ((System.ComponentModel.ISupportInitialize)DGV_Empleados).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label11;
         private Button btnBorrar;
         private Button btnClear;
         private Button btnModificar;
