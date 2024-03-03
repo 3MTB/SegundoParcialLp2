@@ -28,12 +28,45 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "Eury";
+			cbOptions = new ComboBox();
+			btnTry = new Button();
+			SuspendLayout();
+			// 
+			// cbOptions
+			// 
+			cbOptions.DropDownStyle = ComboBoxStyle.DropDownList;
+			cbOptions.FormattingEnabled = true;
+			cbOptions.Location = new Point(40, 103);
+			cbOptions.Name = "cbOptions";
+			cbOptions.Size = new Size(151, 28);
+			cbOptions.TabIndex = 0;
+			// 
+			// btnTry
+			// 
+			btnTry.Location = new Point(161, 213);
+			btnTry.Name = "btnTry";
+			btnTry.Size = new Size(94, 29);
+			btnTry.TabIndex = 1;
+			btnTry.Text = "TRY CONNECT";
+			btnTry.UseVisualStyleBackColor = true;
+			btnTry.Click += btnTry_Click;
+			// 
+			// Eury
+			// 
+			AutoScaleDimensions = new SizeF(8F, 20F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(800, 450);
+			Controls.Add(btnTry);
+			Controls.Add(cbOptions);
+			Name = "Eury";
+			Text = "Eury";
+			Load += Eury_Load;
+			ResumeLayout(false);
 		}
 
 		#endregion
+
+		private ComboBox cbOptions;
+		private Button btnTry;
 	}
 }
