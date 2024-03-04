@@ -56,28 +56,33 @@ namespace SegundoParcialLp2.Forms
 
 		private async void btnGuardar_ClickAsync(object sender, EventArgs e)
 		{
-			await GuardarDefaultAsync();
+			GuardarDefaultAsync();
 
 		}
-		private async Task GuardarDefaultAsync()
+		private void GuardarDefaultAsync()
 		{
 			var fecha = DateOnly.FromDateTime(DateTime.Now);
 			Empleado addDefault = new Empleado("Franly", "Leonardo", "04213131319", "REDES", "Tecnico", "User@gmail.com", "8097775555", "Fantino", 9000, fecha);
-			await gestorEmpleado.InsertaEmpleado(addDefault, cbOption.Text == "franly");
+			gestorEmpleado.InsertaEmpleado(addDefault, cbOption.Text == "franly");
 
 			MessageBox.Show("mensaje de ejecucion");
+			dgRegistro.DataSource = null;
+
 			dgRegistro.DataSource = gestorEmpleado.GetEmpleados(cbOption.Text == "franly");
 		}
 
 		private void btnAddCxc_Click(object sender, EventArgs e)
 		{
 			GuardaDefaultCxC();
+			dgCxc.DataSource = gestorCxc.GetCxcs(isFranly);
+
 		}
-		private async Task GuardaDefaultCxC()
+		private void GuardaDefaultCxC()
 		{
 			var fecha = DateOnly.FromDateTime(DateTime.Now);
 			CxC cxcDefault = new CxC(2, 200, fecha);
-			await gestorCxc.InsertaCxc(cxcDefault, isFranly);
+			gestorCxc.InsertaCxc(cxcDefault, isFranly);
+			dgCxc.DataSource = null;
 			dgCxc.DataSource = gestorCxc.GetCxcs(isFranly);
 
 		}
@@ -85,17 +90,22 @@ namespace SegundoParcialLp2.Forms
 		private void btnGastoAdd_Click(object sender, EventArgs e)
 		{
 			GuardaDefaultGasto();
+
+
 		}
-		private async Task GuardaDefaultGasto()
+		private void GuardaDefaultGasto()
 		{
+			var before = gestorGasto.getGastos(isFranly);
+
 			var fecha = DateOnly.FromDateTime(DateTime.Now);
-			Gasto gasto = new Gasto(1, "PRUEBA", 9000, "Eury", "Franly", fecha);
-			await gestorGasto.InsertaGasto(gasto, isFranly);
+			Gasto gasto = new Gasto(1, "RAFY", 9000, "Eury", "Franly", fecha);
+			gestorGasto.InsertaGasto(gasto, isFranly);
+			dgGasto.DataSource = null;
 			dgGasto.DataSource = gestorGasto.getGastos(isFranly);
 
 		}
 
-		
+
 
 		private void btnAddNomina_Click(object sender, EventArgs e)
 		{
@@ -103,6 +113,8 @@ namespace SegundoParcialLp2.Forms
 
 			Nomina nomina = new Nomina("Mensual", 2, 3, 1, 2, 0, fecha);
 			gestorNomina.InsertNomina(nomina, isFranly);
+			dgNomina.DataSource = null;
+
 			dgNomina.DataSource = gestorNomina.GetNominas(isFranly);
 
 		}

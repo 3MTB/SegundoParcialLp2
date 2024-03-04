@@ -11,7 +11,7 @@ namespace SegundoParcialLp2.Data.Gestor
 {
 	public class gestorEmpleado
 	{
-		public static async Task InsertaEmpleado(Empleado employee, bool isFranly)
+		public static void InsertaEmpleado(Empleado employee, bool isFranly)
 		{
 			try
 			{
@@ -41,7 +41,7 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.Parameters.AddWithValue("direccion", employee.Direccion);
 						cmd.Parameters.AddWithValue("sueldo", employee.Sueldo);
 						cmd.Parameters.AddWithValue("fechaContratado", employee.FechaContratado.ToString());
-						await cmd.ExecuteNonQueryAsync();
+						cmd.ExecuteNonQuery();
 						conex.Close();
 						DatosLocales.ActualizaRegistroEmpleados(isFranly);
 					}
@@ -57,6 +57,8 @@ namespace SegundoParcialLp2.Data.Gestor
 		public static List<Empleado> GetEmpleados(bool IsFranly)
 		{
 			DatosLocales.ActualizaRegistroEmpleados(IsFranly);
+			MessageBox.Show("Actualizando");
+
 			return DatosLocales.empleados;
 		}
 

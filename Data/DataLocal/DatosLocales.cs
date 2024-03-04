@@ -114,6 +114,7 @@ namespace SegundoParcialLp2.Data.DataLocal
 						foreach (DataRow x in dt.Rows)
 						{
 							int id = (int)x["Id"];
+							
 							int numeroCaja = (int)x["NumeroCaja"];
 							var conceptoGasto = x["ConceptoGasto"].ToString();
 							var totalGasto = (decimal)x["TotalGasto"];

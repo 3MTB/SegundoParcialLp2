@@ -41,6 +41,8 @@ namespace SegundoParcialLp2.Data.Gestor
 		public static List<Nomina> GetNominas(bool IsFranly)
 		{
 			DatosLocales.ActualizaRegistroNomina(IsFranly);
+			MessageBox.Show("Actualizando");
+
 			return DatosLocales.nominas;
 		}
 	}

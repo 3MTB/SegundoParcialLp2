@@ -12,7 +12,7 @@ namespace SegundoParcialLp2.Data.Gestor
 	public class gestorCxc
 	{
 		//TODO: COntuinuar here Insert And Select
-		public static async Task InsertaCxc(CxC cxc, bool isFranly)
+		public static void InsertaCxc(CxC cxc, bool isFranly)
 		{
 			try
 			{
@@ -31,7 +31,7 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.Parameters.AddWithValue("IdEmpleado", cxc.IdEmpleado);
 						cmd.Parameters.AddWithValue("TotalCxC", cxc.TotalCxC);
 						cmd.Parameters.AddWithValue("FechaPrestamo", cxc.FechaPrestamo.ToString());
-						await cmd.ExecuteNonQueryAsync();
+						cmd.ExecuteNonQuery();
 						conex.Close();
 						MessageBox.Show("Add");
 						DatosLocales.ActualizaRegistroCxc(isFranly);

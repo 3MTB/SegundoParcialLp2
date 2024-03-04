@@ -11,7 +11,7 @@ namespace SegundoParcialLp2.Data.Gestor
 {
 	public class gestorGasto
 	{
-		public static async Task InsertaGasto(Gasto gasto, bool isFranly)
+		public static void InsertaGasto(Gasto gasto, bool isFranly)
 		{
 			try
 			{
@@ -33,7 +33,7 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.Parameters.AddWithValue("quienAutoriza", gasto.AutorizadoPor);
 						cmd.Parameters.AddWithValue("quienRecibe", gasto.RecibidoPor);
 						cmd.Parameters.AddWithValue("fecha", gasto.Fecha.ToString());
-						await cmd.ExecuteNonQueryAsync();
+						cmd.ExecuteNonQuery();
 						conex.Close();
 						MessageBox.Show("Add - Gasto");
 						DatosLocales.ActualizaRegistroGasto(isFranly);
@@ -50,6 +50,7 @@ namespace SegundoParcialLp2.Data.Gestor
 		public static List<Gasto> getGastos(bool IsFranly)
 		{
 			DatosLocales.ActualizaRegistroGasto(IsFranly);
+			MessageBox.Show("Actualizando");
 			return DatosLocales.gastos;
 		}
 	}
