@@ -37,7 +37,7 @@
             btnInicio = new Button();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            btnAjustes = new Button();
+            LbT_NameVtn = new Label();
             label1 = new Label();
             pbClose = new PictureBox();
             panelDesk = new Panel();
@@ -78,6 +78,7 @@
             btnGastos.Text = "Gastos";
             btnGastos.TextAlign = ContentAlignment.BottomCenter;
             btnGastos.UseVisualStyleBackColor = true;
+            btnGastos.Click += btnGastos_Click;
             // 
             // btnCxC
             // 
@@ -95,6 +96,7 @@
             btnCxC.Text = "CxC";
             btnCxC.TextAlign = ContentAlignment.BottomCenter;
             btnCxC.UseVisualStyleBackColor = true;
+            btnCxC.Click += btnCxC_Click;
             // 
             // btnNomina
             // 
@@ -112,6 +114,7 @@
             btnNomina.Text = "Nomina";
             btnNomina.TextAlign = ContentAlignment.BottomCenter;
             btnNomina.UseVisualStyleBackColor = true;
+            btnNomina.Click += btnNomina_Click;
             // 
             // btnEmpleados
             // 
@@ -164,28 +167,23 @@
             // 
             panel2.Anchor = AnchorStyles.Right;
             panel2.BackColor = Color.Teal;
-            panel2.Controls.Add(btnAjustes);
+            panel2.Controls.Add(LbT_NameVtn);
             panel2.Location = new Point(214, 70);
             panel2.Name = "panel2";
             panel2.Size = new Size(1066, 92);
             panel2.TabIndex = 1;
             // 
-            // btnAjustes
+            // LbT_NameVtn
             // 
-            btnAjustes.FlatAppearance.BorderSize = 0;
-            btnAjustes.FlatAppearance.MouseOverBackColor = Color.DarkTurquoise;
-            btnAjustes.FlatStyle = FlatStyle.Flat;
-            btnAjustes.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAjustes.ForeColor = Color.White;
-            btnAjustes.Image = (Image)resources.GetObject("btnAjustes.Image");
-            btnAjustes.ImageAlign = ContentAlignment.TopCenter;
-            btnAjustes.Location = new Point(951, 0);
-            btnAjustes.Name = "btnAjustes";
-            btnAjustes.Size = new Size(115, 92);
-            btnAjustes.TabIndex = 7;
-            btnAjustes.Text = "Ajustes";
-            btnAjustes.TextAlign = ContentAlignment.BottomCenter;
-            btnAjustes.UseVisualStyleBackColor = true;
+            LbT_NameVtn.AutoSize = true;
+            LbT_NameVtn.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LbT_NameVtn.ForeColor = Color.White;
+            LbT_NameVtn.Location = new Point(466, 34);
+            LbT_NameVtn.Name = "LbT_NameVtn";
+            LbT_NameVtn.Size = new Size(67, 25);
+            LbT_NameVtn.TabIndex = 8;
+            LbT_NameVtn.Text = "Inicio";
+            LbT_NameVtn.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -237,6 +235,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -252,9 +251,9 @@
         private Button btnNomina;
         private Button btnCxC;
         private Button btnGastos;
-        private Button btnAjustes;
         private Label label1;
         private PictureBox pbClose;
         private Panel panelDesk;
+        private Label LbT_NameVtn;
     }
 }
