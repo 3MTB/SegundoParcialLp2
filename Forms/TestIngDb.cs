@@ -31,6 +31,7 @@ namespace SegundoParcialLp2.Forms
 			dgRegistro.DataSource = gestorEmpleado.GetEmpleados(isFranly);
 			dgCxc.DataSource = gestorCxc.GetCxcs(isFranly);
 			dgGasto.DataSource = gestorGasto.getGastos(isFranly);
+			dgNomina.DataSource = gestorNomina.GetNominas(isFranly);
 		}
 
 		private void cbOption_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,6 +92,18 @@ namespace SegundoParcialLp2.Forms
 			Gasto gasto = new Gasto(1, "PRUEBA", 9000, "Eury", "Franly", fecha);
 			await gestorGasto.InsertaGasto(gasto, isFranly);
 			dgGasto.DataSource = gestorGasto.getGastos(isFranly);
+
+		}
+
+		
+
+		private void btnAddNomina_Click(object sender, EventArgs e)
+		{
+			var fecha = DateOnly.FromDateTime(DateTime.Now);
+
+			Nomina nomina = new Nomina("Mensual", 2, 3, 1, 2, 0, fecha);
+			gestorNomina.InsertNomina(nomina, isFranly);
+			dgNomina.DataSource = gestorNomina.GetNominas(isFranly);
 
 		}
 	}

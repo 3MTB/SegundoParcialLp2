@@ -9,6 +9,7 @@ namespace SegundoParcialLp2.Data.DataLocal
 		public static List<Empleado> empleados = new List<Empleado>();
 		public static List<CxC> cxcs = new List<CxC>();
 		public static List<Gasto> gastos = new List<Gasto>();
+		public static List<Nomina> nominas = new List<Nomina>();
 
 		public static void ActualizaRegistroEmpleados(bool isFranly)
 		{
@@ -128,6 +129,49 @@ namespace SegundoParcialLp2.Data.DataLocal
 			catch (Exception e)
 			{
 				MessageBox.Show($"Error al obtener los registros de GASTO::\n{e.Message}");
+			}
+
+		}
+		public static void ActualizaRegistroNomina(bool isFranly)
+		{
+			try
+			{
+				var conex = new AmbarDataBase(isFranly).GetConection();
+				if (conex != null)
+				{
+					using (conex)
+					{
+						string query = "select * FROM Nomina";
+						if (conex.State != ConnectionState.Open)
+						{
+							conex.Open();
+						}
+						SqlDataAdapter adapter = new SqlDataAdapter(query, conex);
+						DataTable dt = new DataTable();
+						adapter.Fill(dt);
+						conex.Close();
+						nominas.Clear();
+						foreach (DataRow x in dt.Rows)
+						{
+
+							int id = (int)x["Id"];
+							var tipoNomina = x["TipoNomina"].ToString();
+							int idEmpleado = (int)x["IdEmpleado"];
+							var afp = (decimal)x["AFP"];
+							var idCxc = (int)x["IdCxC"];
+							var seguroSocial = (decimal)x["SeguroSocial"];
+							var sueldoNeto = (decimal)x["SueldoNeto"];
+							var fecha = DateOnly.FromDateTime((DateTime)x["Fecha"]);
+							Nomina nomina = new Nomina(id, tipoNomina, idEmpleado, afp, idCxc, seguroSocial, sueldoNeto, fecha);
+							nominas.Add(nomina);
+
+						}
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"Error al obtener los registros de Nomina::\n{e.Message}");
 			}
 
 		}

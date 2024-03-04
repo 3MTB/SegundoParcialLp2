@@ -36,9 +36,12 @@
 			dgCxc = new DataGridView();
 			btnGastoAdd = new Button();
 			dgGasto = new DataGridView();
+			dgNomina = new DataGridView();
+			btnAddNomina = new Button();
 			((System.ComponentModel.ISupportInitialize)dgRegistro).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dgCxc).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dgGasto).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dgNomina).BeginInit();
 			SuspendLayout();
 			// 
 			// btnTry
@@ -118,11 +121,32 @@
 			dgGasto.Size = new Size(539, 217);
 			dgGasto.TabIndex = 8;
 			// 
+			// dgNomina
+			// 
+			dgNomina.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgNomina.Location = new Point(738, 467);
+			dgNomina.Name = "dgNomina";
+			dgNomina.RowHeadersWidth = 51;
+			dgNomina.Size = new Size(522, 188);
+			dgNomina.TabIndex = 12;
+			// 
+			// btnAddNomina
+			// 
+			btnAddNomina.Location = new Point(933, 432);
+			btnAddNomina.Name = "btnAddNomina";
+			btnAddNomina.Size = new Size(94, 29);
+			btnAddNomina.TabIndex = 13;
+			btnAddNomina.Text = "add Nomina";
+			btnAddNomina.UseVisualStyleBackColor = true;
+			btnAddNomina.Click += btnAddNomina_Click;
+			// 
 			// TestIngDb
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1272, 793);
+			Controls.Add(btnAddNomina);
+			Controls.Add(dgNomina);
 			Controls.Add(btnGastoAdd);
 			Controls.Add(dgGasto);
 			Controls.Add(dgCxc);
@@ -137,6 +161,7 @@
 			((System.ComponentModel.ISupportInitialize)dgRegistro).EndInit();
 			((System.ComponentModel.ISupportInitialize)dgCxc).EndInit();
 			((System.ComponentModel.ISupportInitialize)dgGasto).EndInit();
+			((System.ComponentModel.ISupportInitialize)dgNomina).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -150,5 +175,7 @@
 		private DataGridView dgCxc;
 		private Button btnGastoAdd;
 		private DataGridView dgGasto;
+		private DataGridView dgNomina;
+		private Button btnAddNomina;
 	}
 }
