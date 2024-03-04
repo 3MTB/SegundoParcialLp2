@@ -30,6 +30,7 @@ namespace SegundoParcialLp2.Forms
 			isFranly = cbOption.Text == "franly";
 			dgRegistro.DataSource = gestorEmpleado.GetEmpleados(isFranly);
 			dgCxc.DataSource = gestorCxc.GetCxcs(isFranly);
+			dgGasto.DataSource = gestorGasto.getGastos(isFranly);
 		}
 
 		private void cbOption_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,6 +78,19 @@ namespace SegundoParcialLp2.Forms
 			CxC cxcDefault = new CxC(2, 200, fecha);
 			await gestorCxc.InsertaCxc(cxcDefault, isFranly);
 			dgCxc.DataSource = gestorCxc.GetCxcs(isFranly);
+
+		}
+
+		private void btnGastoAdd_Click(object sender, EventArgs e)
+		{
+			GuardaDefaultGasto();
+		}
+		private async Task GuardaDefaultGasto()
+		{
+			var fecha = DateOnly.FromDateTime(DateTime.Now);
+			Gasto gasto = new Gasto(1, "PRUEBA", 9000, "Eury", "Franly", fecha);
+			await gestorGasto.InsertaGasto(gasto, isFranly);
+			dgGasto.DataSource = gestorGasto.getGastos(isFranly);
 
 		}
 	}

@@ -10,15 +10,12 @@ namespace SegundoParcialLp2
 		[STAThread]
 		static void Main()
 		{
-			// To customize application configuration such as set high DPI settings or default font,
-			// see https://aka.ms/applicationconfiguration.
+
 			ApplicationConfiguration.Initialize();
 			var testing = new TestIngDb();
 			var DBoard = new DashBoard();
 			Application.Run(testing);
 
-			//EURYYYYY
-			//hola fra
 		}
 	}
 }

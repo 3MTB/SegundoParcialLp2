@@ -34,13 +34,16 @@
 			dgRegistro = new DataGridView();
 			btnAddCxc = new Button();
 			dgCxc = new DataGridView();
+			btnGastoAdd = new Button();
+			dgGasto = new DataGridView();
 			((System.ComponentModel.ISupportInitialize)dgRegistro).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dgCxc).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dgGasto).BeginInit();
 			SuspendLayout();
 			// 
 			// btnTry
 			// 
-			btnTry.Location = new Point(946, 283);
+			btnTry.Location = new Point(1123, 283);
 			btnTry.Name = "btnTry";
 			btnTry.Size = new Size(94, 29);
 			btnTry.TabIndex = 3;
@@ -52,7 +55,7 @@
 			// 
 			cbOption.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbOption.FormattingEnabled = true;
-			cbOption.Location = new Point(932, 226);
+			cbOption.Location = new Point(1109, 226);
 			cbOption.Name = "cbOption";
 			cbOption.Size = new Size(151, 28);
 			cbOption.TabIndex = 2;
@@ -60,7 +63,7 @@
 			// 
 			// btnGuardar
 			// 
-			btnGuardar.Location = new Point(141, 522);
+			btnGuardar.Location = new Point(580, 644);
 			btnGuardar.Name = "btnGuardar";
 			btnGuardar.Size = new Size(94, 29);
 			btnGuardar.TabIndex = 4;
@@ -71,16 +74,15 @@
 			// dgRegistro
 			// 
 			dgRegistro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgRegistro.Dock = DockStyle.Bottom;
 			dgRegistro.Location = new Point(0, 557);
 			dgRegistro.Name = "dgRegistro";
 			dgRegistro.RowHeadersWidth = 51;
-			dgRegistro.Size = new Size(1272, 236);
+			dgRegistro.Size = new Size(551, 236);
 			dgRegistro.TabIndex = 5;
 			// 
 			// btnAddCxc
 			// 
-			btnAddCxc.Location = new Point(12, 216);
+			btnAddCxc.Location = new Point(580, 12);
 			btnAddCxc.Name = "btnAddCxc";
 			btnAddCxc.Size = new Size(218, 75);
 			btnAddCxc.TabIndex = 6;
@@ -91,18 +93,38 @@
 			// dgCxc
 			// 
 			dgCxc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgCxc.Dock = DockStyle.Top;
-			dgCxc.Location = new Point(0, 0);
+			dgCxc.Location = new Point(12, 12);
 			dgCxc.Name = "dgCxc";
 			dgCxc.RowHeadersWidth = 51;
-			dgCxc.Size = new Size(1272, 188);
+			dgCxc.Size = new Size(539, 130);
 			dgCxc.TabIndex = 7;
+			// 
+			// btnGastoAdd
+			// 
+			btnGastoAdd.Location = new Point(597, 270);
+			btnGastoAdd.Name = "btnGastoAdd";
+			btnGastoAdd.Size = new Size(94, 29);
+			btnGastoAdd.TabIndex = 9;
+			btnGastoAdd.Text = "Gasto ADD";
+			btnGastoAdd.UseVisualStyleBackColor = true;
+			btnGastoAdd.Click += btnGastoAdd_Click;
+			// 
+			// dgGasto
+			// 
+			dgGasto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgGasto.Location = new Point(12, 226);
+			dgGasto.Name = "dgGasto";
+			dgGasto.RowHeadersWidth = 51;
+			dgGasto.Size = new Size(539, 217);
+			dgGasto.TabIndex = 8;
 			// 
 			// TestIngDb
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1272, 793);
+			Controls.Add(btnGastoAdd);
+			Controls.Add(dgGasto);
 			Controls.Add(dgCxc);
 			Controls.Add(btnAddCxc);
 			Controls.Add(dgRegistro);
@@ -114,6 +136,7 @@
 			Load += TestIngDb_Load;
 			((System.ComponentModel.ISupportInitialize)dgRegistro).EndInit();
 			((System.ComponentModel.ISupportInitialize)dgCxc).EndInit();
+			((System.ComponentModel.ISupportInitialize)dgGasto).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -125,5 +148,7 @@
 		private DataGridView dgRegistro;
 		private Button btnAddCxc;
 		private DataGridView dgCxc;
+		private Button btnGastoAdd;
+		private DataGridView dgGasto;
 	}
 }

@@ -8,6 +8,7 @@ namespace SegundoParcialLp2.Data.DataLocal
 	{
 		public static List<Empleado> empleados = new List<Empleado>();
 		public static List<CxC> cxcs = new List<CxC>();
+		public static List<Gasto> gastos = new List<Gasto>();
 
 		public static void ActualizaRegistroEmpleados(bool isFranly)
 		{
@@ -88,6 +89,45 @@ namespace SegundoParcialLp2.Data.DataLocal
 			catch (Exception e)
 			{
 				MessageBox.Show($"Error al obtener los registros de CXC::\n{e.Message}");
+			}
+
+		}
+		public static void ActualizaRegistroGasto(bool isFranly)
+		{
+			try
+			{
+				var conex = new AmbarDataBase(isFranly).GetConection();
+				if (conex != null)
+				{
+					using (conex)
+					{
+						string query = "select * FROM Gasto";
+						if (conex.State != ConnectionState.Open)
+						{
+							conex.Open();
+						}
+						SqlDataAdapter adapter = new SqlDataAdapter(query, conex);
+						DataTable dt = new DataTable();
+						adapter.Fill(dt);
+						gastos.Clear();
+						foreach (DataRow x in dt.Rows)
+						{
+							int id = (int)x["Id"];
+							int numeroCaja = (int)x["NumeroCaja"];
+							var conceptoGasto = x["ConceptoGasto"].ToString();
+							var totalGasto = (decimal)x["TotalGasto"];
+							var quienAutoriza = x["QuienAutoriza"].ToString();
+							var quienRecibe = x["QuienRecibe"].ToString();
+							var fecha = DateOnly.FromDateTime((DateTime)x["Fecha"]);
+							Gasto gasto = new Gasto(id, numeroCaja, conceptoGasto, totalGasto, quienAutoriza, quienRecibe, fecha);
+							gastos.Add(gasto);
+						}
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"Error al obtener los registros de GASTO::\n{e.Message}");
 			}
 
 		}
