@@ -32,12 +32,15 @@
 			cbOption = new ComboBox();
 			btnGuardar = new Button();
 			dgRegistro = new DataGridView();
+			btnAddCxc = new Button();
+			dgCxc = new DataGridView();
 			((System.ComponentModel.ISupportInitialize)dgRegistro).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dgCxc).BeginInit();
 			SuspendLayout();
 			// 
 			// btnTry
 			// 
-			btnTry.Location = new Point(963, 191);
+			btnTry.Location = new Point(946, 283);
 			btnTry.Name = "btnTry";
 			btnTry.Size = new Size(94, 29);
 			btnTry.TabIndex = 3;
@@ -49,7 +52,7 @@
 			// 
 			cbOption.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbOption.FormattingEnabled = true;
-			cbOption.Location = new Point(936, 126);
+			cbOption.Location = new Point(932, 226);
 			cbOption.Name = "cbOption";
 			cbOption.Size = new Size(151, 28);
 			cbOption.TabIndex = 2;
@@ -57,7 +60,7 @@
 			// 
 			// btnGuardar
 			// 
-			btnGuardar.Location = new Point(47, 427);
+			btnGuardar.Location = new Point(141, 522);
 			btnGuardar.Name = "btnGuardar";
 			btnGuardar.Size = new Size(94, 29);
 			btnGuardar.TabIndex = 4;
@@ -75,11 +78,33 @@
 			dgRegistro.Size = new Size(1272, 236);
 			dgRegistro.TabIndex = 5;
 			// 
+			// btnAddCxc
+			// 
+			btnAddCxc.Location = new Point(12, 216);
+			btnAddCxc.Name = "btnAddCxc";
+			btnAddCxc.Size = new Size(218, 75);
+			btnAddCxc.TabIndex = 6;
+			btnAddCxc.Text = "btnCxc";
+			btnAddCxc.UseVisualStyleBackColor = true;
+			btnAddCxc.Click += btnAddCxc_Click;
+			// 
+			// dgCxc
+			// 
+			dgCxc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgCxc.Dock = DockStyle.Top;
+			dgCxc.Location = new Point(0, 0);
+			dgCxc.Name = "dgCxc";
+			dgCxc.RowHeadersWidth = 51;
+			dgCxc.Size = new Size(1272, 188);
+			dgCxc.TabIndex = 7;
+			// 
 			// TestIngDb
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1272, 793);
+			Controls.Add(dgCxc);
+			Controls.Add(btnAddCxc);
 			Controls.Add(dgRegistro);
 			Controls.Add(btnGuardar);
 			Controls.Add(btnTry);
@@ -88,6 +113,7 @@
 			Text = "TestIngDb";
 			Load += TestIngDb_Load;
 			((System.ComponentModel.ISupportInitialize)dgRegistro).EndInit();
+			((System.ComponentModel.ISupportInitialize)dgCxc).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -97,5 +123,7 @@
 		private ComboBox cbOption;
 		private Button btnGuardar;
 		private DataGridView dgRegistro;
+		private Button btnAddCxc;
+		private DataGridView dgCxc;
 	}
 }

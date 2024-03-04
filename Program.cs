@@ -13,9 +13,9 @@ namespace SegundoParcialLp2
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
 			ApplicationConfiguration.Initialize();
-			var f = new TestIngDb();
+			var testing = new TestIngDb();
 			var DBoard = new DashBoard();
-			Application.Run(DBoard);
+			Application.Run(testing);
 
 			//EURYYYYY
 			//hola fra

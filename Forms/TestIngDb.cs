@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using SegundoParcialLp2.Data;
 using SegundoParcialLp2.Data.Gestor;
 using SegundoParcialLp2.Models;
+using ZstdSharp.Unsafe;
 
 namespace SegundoParcialLp2.Forms
 {
 	public partial class TestIngDb : Form
 	{
+		public bool isFranly { get; set; } = false;
 		public TestIngDb()
 		{
 			InitializeComponent();
@@ -25,11 +27,14 @@ namespace SegundoParcialLp2.Forms
 			string[] opc = ["franly", "eury"];
 			cbOption.DataSource = opc;
 			cbOption.SelectedIndex = 1;
-			dgRegistro.DataSource = gestorEmpleado.GetEmpleados(cbOption.Text == "franly");
+			isFranly = cbOption.Text == "franly";
+			dgRegistro.DataSource = gestorEmpleado.GetEmpleados(isFranly);
+			dgCxc.DataSource = gestorCxc.GetCxcs(isFranly);
 		}
 
 		private void cbOption_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			isFranly = cbOption.Text == "franly";
 
 		}
 
@@ -49,7 +54,7 @@ namespace SegundoParcialLp2.Forms
 
 		private async void btnGuardar_ClickAsync(object sender, EventArgs e)
 		{
-		await 	GuardarDefaultAsync();
+			await GuardarDefaultAsync();
 
 		}
 		private async Task GuardarDefaultAsync()
@@ -60,6 +65,19 @@ namespace SegundoParcialLp2.Forms
 
 			MessageBox.Show("mensaje de ejecucion");
 			dgRegistro.DataSource = gestorEmpleado.GetEmpleados(cbOption.Text == "franly");
+		}
+
+		private void btnAddCxc_Click(object sender, EventArgs e)
+		{
+			GuardaDefaultCxC();
+		}
+		private async Task GuardaDefaultCxC()
+		{
+			var fecha = DateOnly.FromDateTime(DateTime.Now);
+			CxC cxcDefault = new CxC(2, 200, fecha);
+			await gestorCxc.InsertaCxc(cxcDefault, isFranly);
+			dgCxc.DataSource = gestorCxc.GetCxcs(isFranly);
+
 		}
 	}
 }
