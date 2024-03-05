@@ -44,7 +44,10 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.Parameters.AddWithValue("fechaContratado", employee.FechaContratado.ToString());
 						cmd.ExecuteNonQuery();
 						conex.Close();
+
 						DatosLocales.ActualizaRegistroEmpleados(isFranly);
+						MessageBox.Show("Empleado agregado", "Success");
+
 					}
 				}
 			}

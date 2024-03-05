@@ -44,7 +44,7 @@ namespace SegundoParcialLp2.Forms
 
 		private void btnEmpleados_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new FrmEmpleados(), sender);
+			OpenChildForm(new FrmEmpleados(isFranly), sender);
 		}
 
 		private void btnInicio_Click(object sender, EventArgs e)
