@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mysqlx.Cursor;
 
 namespace SegundoParcialLp2.Models
 {
@@ -18,6 +19,7 @@ namespace SegundoParcialLp2.Models
 			AutorizadoPor = autorizadoPor;
 			RecibidoPor = recibidoPor;
 			Fecha = fecha;
+
 		}
 
 		public Gasto(int iD, int numeroCaja,
@@ -31,6 +33,7 @@ namespace SegundoParcialLp2.Models
 			AutorizadoPor = autorizadoPor;
 			RecibidoPor = recibidoPor;
 			Fecha = fecha;
+
 		}
 
 		public int ID { get; set; }

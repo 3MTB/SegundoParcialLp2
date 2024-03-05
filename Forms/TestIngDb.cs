@@ -97,8 +97,7 @@ namespace SegundoParcialLp2.Forms
 			var before = gestorGasto.getGastos(isFranly);
 
 			var fecha = DateOnly.FromDateTime(DateTime.Now);
-			Gasto gasto = new Gasto(1, "RAFY", 9000, "Eury", "Franly", fecha);
-			gestorGasto.InsertaGasto(gasto, isFranly);
+			
 			dgGasto.DataSource = null;
 			dgGasto.DataSource = gestorGasto.getGastos(isFranly);
 

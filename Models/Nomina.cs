@@ -26,22 +26,16 @@ namespace SegundoParcialLp2.Models
 			AFP = aFP;
 			IdCxC = idCxC;
 			SeguroSocial = seguroSocial;
+
+
 		}
-		/*
-		 ([TipoNomina]
-           ,[IdEmpleado]
-           ,[AFP]
-           ,[IdCxC]
-           ,[SeguroSocial]
-           ,[SueldoNeto]
-           ,[Fecha])
-		 */
+
 		public int ID { get; set; }
-		public  string TipoNomina { get; set; }
-		public  int IdEmpleado { get; set; }
-		public  decimal AFP { get; set; }
-		public  int IdCxC { get; set; }
-		public  decimal SeguroSocial { get; set; }
+		public string TipoNomina { get; set; }
+		public int IdEmpleado { get; set; }
+		public decimal AFP { get; set; }
+		public int IdCxC { get; set; }
+		public decimal SeguroSocial { get; set; }
 		public decimal SueldoNeto { get; set; }
 		public DateOnly fecha { get; set; }
 	}

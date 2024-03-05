@@ -58,7 +58,7 @@ namespace SegundoParcialLp2.Forms
 
 		private void btnGastos_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new FrmGastos(), sender);
+			OpenChildForm(new FrmGastos(isFranly), sender);
 		}
 
 		private void btnCxC_Click(object sender, EventArgs e)
