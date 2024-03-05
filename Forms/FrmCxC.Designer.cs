@@ -44,6 +44,7 @@
 			// 
 			// CB_IdEmpleado
 			// 
+			CB_IdEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
 			CB_IdEmpleado.FormattingEnabled = true;
 			CB_IdEmpleado.Location = new Point(287, 92);
 			CB_IdEmpleado.Margin = new Padding(3, 4, 3, 4);

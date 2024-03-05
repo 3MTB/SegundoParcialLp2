@@ -198,6 +198,7 @@
 			// 
 			// cbTipoNomina
 			// 
+			cbTipoNomina.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbTipoNomina.FormattingEnabled = true;
 			cbTipoNomina.Location = new Point(227, 80);
 			cbTipoNomina.Margin = new Padding(3, 4, 3, 4);
@@ -207,6 +208,7 @@
 			// 
 			// cbIdEmpleado
 			// 
+			cbIdEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbIdEmpleado.FormattingEnabled = true;
 			cbIdEmpleado.Location = new Point(227, 119);
 			cbIdEmpleado.Margin = new Padding(3, 4, 3, 4);
@@ -216,6 +218,7 @@
 			// 
 			// cbIdCxc
 			// 
+			cbIdCxc.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbIdCxc.FormattingEnabled = true;
 			cbIdCxc.Location = new Point(227, 200);
 			cbIdCxc.Margin = new Padding(3, 4, 3, 4);
@@ -225,6 +228,7 @@
 			// 
 			// cbAFP
 			// 
+			cbAFP.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbAFP.FormattingEnabled = true;
 			cbAFP.Location = new Point(227, 164);
 			cbAFP.Margin = new Padding(3, 4, 3, 4);

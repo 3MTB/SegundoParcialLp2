@@ -163,7 +163,7 @@
 			// 
 			label3.AutoSize = true;
 			label3.Font = new Font("Century Gothic", 14.25F);
-			label3.Location = new Point(35, 186);
+			label3.Location = new Point(35, 195);
 			label3.Name = "label3";
 			label3.Size = new Size(148, 30);
 			label3.TabIndex = 60;
@@ -210,6 +210,7 @@
 			// 
 			// CB_QuienAutoriza
 			// 
+			CB_QuienAutoriza.DropDownStyle = ComboBoxStyle.DropDownList;
 			CB_QuienAutoriza.FormattingEnabled = true;
 			CB_QuienAutoriza.Location = new Point(266, 224);
 			CB_QuienAutoriza.Margin = new Padding(3, 4, 3, 4);
@@ -219,6 +220,7 @@
 			// 
 			// CB_NumeroCaja
 			// 
+			CB_NumeroCaja.DropDownStyle = ComboBoxStyle.DropDownList;
 			CB_NumeroCaja.FormattingEnabled = true;
 			CB_NumeroCaja.Location = new Point(266, 59);
 			CB_NumeroCaja.Margin = new Padding(3, 4, 3, 4);
@@ -249,7 +251,7 @@
 			// 
 			// tbTotalGasto
 			// 
-			tbTotalGasto.Location = new Point(236, 188);
+			tbTotalGasto.Location = new Point(266, 187);
 			tbTotalGasto.Margin = new Padding(3, 4, 3, 4);
 			tbTotalGasto.Multiline = true;
 			tbTotalGasto.Name = "tbTotalGasto";
