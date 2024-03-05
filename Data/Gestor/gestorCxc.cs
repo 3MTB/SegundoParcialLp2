@@ -33,7 +33,7 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.Parameters.AddWithValue("FechaPrestamo", cxc.FechaPrestamo.ToString());
 						cmd.ExecuteNonQuery();
 						conex.Close();
-						MessageBox.Show("Add");
+						MessageBox.Show("Add - CxC");
 						DatosLocales.ActualizaRegistroCxc(isFranly);
 					}
 				}

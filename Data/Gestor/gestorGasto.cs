@@ -50,7 +50,6 @@ namespace SegundoParcialLp2.Data.Gestor
 		public static List<Gasto> getGastos(bool IsFranly)
 		{
 			DatosLocales.ActualizaRegistroGasto(IsFranly);
-			MessageBox.Show("Actualizando");
 			return DatosLocales.gastos;
 		}
 	}

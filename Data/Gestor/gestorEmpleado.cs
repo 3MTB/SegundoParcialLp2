@@ -13,9 +13,10 @@ namespace SegundoParcialLp2.Data.Gestor
 	{
 		public static void InsertaEmpleado(Empleado employee, bool isFranly)
 		{
+
 			try
 			{
-				if (DataLocal.DatosLocales.empleados.Any(x => x == employee))
+				if (DatosLocales.empleados.Any(x => x == employee))
 				{
 					MessageBox.Show("Ya existe un empleado registrado con dichos datos");
 					return;
@@ -57,7 +58,6 @@ namespace SegundoParcialLp2.Data.Gestor
 		public static List<Empleado> GetEmpleados(bool IsFranly)
 		{
 			DatosLocales.ActualizaRegistroEmpleados(IsFranly);
-			MessageBox.Show("Actualizando");
 
 			return DatosLocales.empleados;
 		}

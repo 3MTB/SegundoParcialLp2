@@ -1,4 +1,5 @@
 using SegundoParcialLp2.Forms;
+using SegundoParcialLp2.Models;
 
 namespace SegundoParcialLp2
 {
@@ -12,8 +13,12 @@ namespace SegundoParcialLp2
 		{
 
 			ApplicationConfiguration.Initialize();
+			// para determinar si es la computadora de Franly o No
+			bool isFranly = Environment.UserDomainName == User.Franly;
+			// para determinar si es la computadora de Franly o No
+
 			var testing = new TestIngDb();
-			var DBoard = new DashBoard();
+			var DBoard = new DashBoard(isFranly);
 			Application.Run(testing);
 
 		}

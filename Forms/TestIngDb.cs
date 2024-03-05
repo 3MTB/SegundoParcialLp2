@@ -65,7 +65,6 @@ namespace SegundoParcialLp2.Forms
 			Empleado addDefault = new Empleado("Franly", "Leonardo", "04213131319", "REDES", "Tecnico", "User@gmail.com", "8097775555", "Fantino", 9000, fecha);
 			gestorEmpleado.InsertaEmpleado(addDefault, cbOption.Text == "franly");
 
-			MessageBox.Show("mensaje de ejecucion");
 			dgRegistro.DataSource = null;
 
 			dgRegistro.DataSource = gestorEmpleado.GetEmpleados(cbOption.Text == "franly");
@@ -107,11 +106,14 @@ namespace SegundoParcialLp2.Forms
 
 
 
+
 		private void btnAddNomina_Click(object sender, EventArgs e)
 		{
 			var fecha = DateOnly.FromDateTime(DateTime.Now);
-
-			Nomina nomina = new Nomina("Mensual", 2, 3, 1, 2, 0, fecha);
+			//string query = $"EXEC GeneraRegistroNomina {1},{2},{3},{5},{6};" ;
+		/*	string query = $"EXEC GeneraRegistroNomina {nomina.IdCxC},{nomina.IdEmpleado},{nomina.TipoNomina},{nomina.SeguroSocial},{nomina.AFP};";
+			*/
+			Nomina nomina = new Nomina("Mensual", 1, 6.2m, 1, 5);
 			gestorNomina.InsertNomina(nomina, isFranly);
 			dgNomina.DataSource = null;
 
