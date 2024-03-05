@@ -12,8 +12,8 @@ namespace SegundoParcialLp2.Forms
 {
 	public partial class DashBoard : Form
 	{
-        public  bool isFranly { get; set; }
-        public DashBoard(bool isFranly)
+		public bool isFranly { get; set; }
+		public DashBoard(bool isFranly)
 		{
 			InitializeComponent();
 			this.isFranly = isFranly;
@@ -49,11 +49,13 @@ namespace SegundoParcialLp2.Forms
 
 		private void btnInicio_Click(object sender, EventArgs e)
 		{
-			if (activateForm != null)
+			OpenChildForm(new FrmHome(), sender);
+
+			/*if (activateForm != null)
 			{
 				activateForm.Close();
 				LbT_NameVtn.Text = "Inicio";
-			}
+			}*/
 		}
 
 		private void btnGastos_Click(object sender, EventArgs e)
@@ -73,6 +75,7 @@ namespace SegundoParcialLp2.Forms
 
 		private void DashBoard_Load(object sender, EventArgs e)
 		{
+			OpenChildForm(new FrmHome(), btnInicio);
 
 		}
 	}
