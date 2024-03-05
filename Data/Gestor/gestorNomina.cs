@@ -20,23 +20,11 @@ namespace SegundoParcialLp2.Data.Gestor
 				{
 					using (conex)
 					{
-
-						MessageBox.Show($"EXECUTE GeneraRegistroNomina {nomina.IdEmpleado},{nomina.IdCxC},{nomina.TipoNomina},{nomina.SeguroSocial},{nomina.AFP}");
-						/*@IdCxc as int ,
-@IdEmpleado as int,
-@TipoNomina as varchar(15),
-@SeguroSocial as decimal(18,2),
-@AFP as decimal(18,2)*/
-						//string query = $"EXEC GeneraRegistroNomina {1},{2},{3},{5},{6};" ;
 						string query = $"EXEC GeneraRegistroNomina {nomina.IdCxC},{nomina.IdEmpleado},{nomina.TipoNomina},{nomina.SeguroSocial},{nomina.AFP};";
-						//string query = "EXECUTE GeneraRegistroNomina @IdEmpleado,@IdCxc,@TipoNomina,@SeguroSocial,@AFP";
 						SqlCommand cmd = new SqlCommand(query, conex);
-						//cmd.Parameters.AddWithValue("IdEmpleado", nomina.IdEmpleado);
-						//cmd.Parameters.AddWithValue("IdCxc", nomina.IdCxC);
-						//cmd.Parameters.AddWithValue("TipoNomina", nomina.TipoNomina);
-						//cmd.Parameters.AddWithValue("SeguroSocial", nomina.SeguroSocial);
-						//cmd.Parameters.AddWithValue("AFP", nomina.AFP);
 						cmd.ExecuteNonQuery();
+						conex.Close();
+						MessageBox.Show("Success add nomina", "Success");
 						DatosLocales.ActualizaRegistroNomina(isFranly);
 					}
 				}

@@ -32,22 +32,20 @@
 			btnClear = new Button();
 			btnModificar = new Button();
 			btnAgregar = new Button();
-			DGV_Empleados = new DataGridView();
-			TB_Correo = new TextBox();
+			dgvNomina = new DataGridView();
+			tbSueldoNeto = new TextBox();
 			label6 = new Label();
 			label5 = new Label();
 			label4 = new Label();
 			label3 = new Label();
 			label2 = new Label();
 			label1 = new Label();
-			DataTimeEmpleado = new DateTimePicker();
-			label10 = new Label();
-			textBox1 = new TextBox();
-			textBox2 = new TextBox();
-			comboBox1 = new ComboBox();
-			comboBox2 = new ComboBox();
-			comboBox3 = new ComboBox();
-			((System.ComponentModel.ISupportInitialize)DGV_Empleados).BeginInit();
+			tbSeguroSocial = new TextBox();
+			cbTipoNomina = new ComboBox();
+			cbIdEmpleado = new ComboBox();
+			cbIdCxc = new ComboBox();
+			cbAFP = new ComboBox();
+			((System.ComponentModel.ISupportInitialize)dgvNomina).BeginInit();
 			SuspendLayout();
 			// 
 			// btnBorrar
@@ -105,27 +103,29 @@
 			btnAgregar.TabIndex = 76;
 			btnAgregar.Text = "Agregar";
 			btnAgregar.UseVisualStyleBackColor = false;
+			btnAgregar.Click += btnAgregar_Click;
 			// 
-			// DGV_Empleados
+			// dgvNomina
 			// 
-			DGV_Empleados.BackgroundColor = Color.White;
-			DGV_Empleados.BorderStyle = BorderStyle.Fixed3D;
-			DGV_Empleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			DGV_Empleados.Location = new Point(51, 340);
-			DGV_Empleados.Margin = new Padding(3, 4, 3, 4);
-			DGV_Empleados.Name = "DGV_Empleados";
-			DGV_Empleados.RowHeadersWidth = 51;
-			DGV_Empleados.Size = new Size(813, 475);
-			DGV_Empleados.TabIndex = 75;
+			dgvNomina.BackgroundColor = Color.White;
+			dgvNomina.BorderStyle = BorderStyle.Fixed3D;
+			dgvNomina.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgvNomina.Location = new Point(51, 340);
+			dgvNomina.Margin = new Padding(3, 4, 3, 4);
+			dgvNomina.Name = "dgvNomina";
+			dgvNomina.RowHeadersWidth = 51;
+			dgvNomina.Size = new Size(813, 475);
+			dgvNomina.TabIndex = 75;
 			// 
-			// TB_Correo
+			// tbSueldoNeto
 			// 
-			TB_Correo.Location = new Point(639, 128);
-			TB_Correo.Margin = new Padding(3, 4, 3, 4);
-			TB_Correo.Multiline = true;
-			TB_Correo.Name = "TB_Correo";
-			TB_Correo.Size = new Size(206, 29);
-			TB_Correo.TabIndex = 65;
+			tbSueldoNeto.Enabled = false;
+			tbSueldoNeto.Location = new Point(639, 128);
+			tbSueldoNeto.Margin = new Padding(3, 4, 3, 4);
+			tbSueldoNeto.Multiline = true;
+			tbSueldoNeto.Name = "tbSueldoNeto";
+			tbSueldoNeto.Size = new Size(206, 29);
+			tbSueldoNeto.TabIndex = 65;
 			// 
 			// label6
 			// 
@@ -187,69 +187,50 @@
 			label1.TabIndex = 55;
 			label1.Text = "Tipo de Nomina";
 			// 
-			// DataTimeEmpleado
+			// tbSeguroSocial
 			// 
-			DataTimeEmpleado.Format = DateTimePickerFormat.Short;
-			DataTimeEmpleado.Location = new Point(639, 167);
-			DataTimeEmpleado.Margin = new Padding(3, 4, 3, 4);
-			DataTimeEmpleado.Name = "DataTimeEmpleado";
-			DataTimeEmpleado.Size = new Size(206, 27);
-			DataTimeEmpleado.TabIndex = 81;
+			tbSeguroSocial.Location = new Point(639, 84);
+			tbSeguroSocial.Margin = new Padding(3, 4, 3, 4);
+			tbSeguroSocial.Multiline = true;
+			tbSeguroSocial.Name = "tbSeguroSocial";
+			tbSeguroSocial.Size = new Size(206, 29);
+			tbSeguroSocial.TabIndex = 82;
 			// 
-			// label10
+			// cbTipoNomina
 			// 
-			label10.AutoSize = true;
-			label10.Font = new Font("Century Gothic", 14.25F);
-			label10.Location = new Point(441, 167);
-			label10.Name = "label10";
-			label10.Size = new Size(88, 30);
-			label10.TabIndex = 80;
-			label10.Text = "Fecha";
+			cbTipoNomina.FormattingEnabled = true;
+			cbTipoNomina.Location = new Point(227, 80);
+			cbTipoNomina.Margin = new Padding(3, 4, 3, 4);
+			cbTipoNomina.Name = "cbTipoNomina";
+			cbTipoNomina.Size = new Size(206, 28);
+			cbTipoNomina.TabIndex = 85;
 			// 
-			// textBox1
+			// cbIdEmpleado
 			// 
-			textBox1.Location = new Point(639, 84);
-			textBox1.Margin = new Padding(3, 4, 3, 4);
-			textBox1.Multiline = true;
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(206, 29);
-			textBox1.TabIndex = 82;
+			cbIdEmpleado.FormattingEnabled = true;
+			cbIdEmpleado.Location = new Point(227, 119);
+			cbIdEmpleado.Margin = new Padding(3, 4, 3, 4);
+			cbIdEmpleado.Name = "cbIdEmpleado";
+			cbIdEmpleado.Size = new Size(206, 28);
+			cbIdEmpleado.TabIndex = 86;
 			// 
-			// textBox2
+			// cbIdCxc
 			// 
-			textBox2.Location = new Point(227, 157);
-			textBox2.Margin = new Padding(3, 4, 3, 4);
-			textBox2.Multiline = true;
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(206, 29);
-			textBox2.TabIndex = 83;
+			cbIdCxc.FormattingEnabled = true;
+			cbIdCxc.Location = new Point(227, 200);
+			cbIdCxc.Margin = new Padding(3, 4, 3, 4);
+			cbIdCxc.Name = "cbIdCxc";
+			cbIdCxc.Size = new Size(206, 28);
+			cbIdCxc.TabIndex = 87;
 			// 
-			// comboBox1
+			// cbAFP
 			// 
-			comboBox1.FormattingEnabled = true;
-			comboBox1.Location = new Point(227, 80);
-			comboBox1.Margin = new Padding(3, 4, 3, 4);
-			comboBox1.Name = "comboBox1";
-			comboBox1.Size = new Size(206, 28);
-			comboBox1.TabIndex = 85;
-			// 
-			// comboBox2
-			// 
-			comboBox2.FormattingEnabled = true;
-			comboBox2.Location = new Point(227, 119);
-			comboBox2.Margin = new Padding(3, 4, 3, 4);
-			comboBox2.Name = "comboBox2";
-			comboBox2.Size = new Size(206, 28);
-			comboBox2.TabIndex = 86;
-			// 
-			// comboBox3
-			// 
-			comboBox3.FormattingEnabled = true;
-			comboBox3.Location = new Point(227, 200);
-			comboBox3.Margin = new Padding(3, 4, 3, 4);
-			comboBox3.Name = "comboBox3";
-			comboBox3.Size = new Size(206, 28);
-			comboBox3.TabIndex = 87;
+			cbAFP.FormattingEnabled = true;
+			cbAFP.Location = new Point(227, 164);
+			cbAFP.Margin = new Padding(3, 4, 3, 4);
+			cbAFP.Name = "cbAFP";
+			cbAFP.Size = new Size(206, 28);
+			cbAFP.TabIndex = 88;
 			// 
 			// FrmNomina
 			// 
@@ -257,19 +238,17 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(914, 952);
-			Controls.Add(comboBox3);
-			Controls.Add(comboBox2);
-			Controls.Add(comboBox1);
-			Controls.Add(textBox2);
-			Controls.Add(textBox1);
-			Controls.Add(DataTimeEmpleado);
-			Controls.Add(label10);
+			Controls.Add(cbAFP);
+			Controls.Add(cbIdCxc);
+			Controls.Add(cbIdEmpleado);
+			Controls.Add(cbTipoNomina);
+			Controls.Add(tbSeguroSocial);
 			Controls.Add(btnBorrar);
 			Controls.Add(btnClear);
 			Controls.Add(btnModificar);
 			Controls.Add(btnAgregar);
-			Controls.Add(DGV_Empleados);
-			Controls.Add(TB_Correo);
+			Controls.Add(dgvNomina);
+			Controls.Add(tbSueldoNeto);
 			Controls.Add(label6);
 			Controls.Add(label5);
 			Controls.Add(label4);
@@ -280,7 +259,8 @@
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "FrmNomina";
 			Text = "Nomina";
-			((System.ComponentModel.ISupportInitialize)DGV_Empleados).EndInit();
+			Load += FrmNomina_Load;
+			((System.ComponentModel.ISupportInitialize)dgvNomina).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -291,20 +271,18 @@
         private Button btnClear;
         private Button btnModificar;
         private Button btnAgregar;
-        private DataGridView DGV_Empleados;
-        private TextBox TB_Correo;
+        private DataGridView dgvNomina;
+        private TextBox tbSueldoNeto;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private DateTimePicker DataTimeEmpleado;
-        private Label label10;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
-    }
+        private TextBox tbSeguroSocial;
+        private ComboBox cbTipoNomina;
+        private ComboBox cbIdEmpleado;
+        private ComboBox cbIdCxc;
+		private ComboBox cbAFP;
+	}
 }

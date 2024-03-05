@@ -63,12 +63,12 @@ namespace SegundoParcialLp2.Forms
 
 		private void btnCxC_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new FrmCxC(), sender);
+			OpenChildForm(new FrmCxC(isFranly), sender);
 		}
 
 		private void btnNomina_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new FrmNomina(), sender);
+			OpenChildForm(new FrmNomina(isFranly), sender);
 		}
 
 		private void DashBoard_Load(object sender, EventArgs e)

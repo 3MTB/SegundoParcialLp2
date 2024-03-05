@@ -18,7 +18,7 @@ namespace SegundoParcialLp2
 			// para determinar si es la computadora de Franly o No
 			var testing = new TestIngDb();
 			var DBoard = new DashBoard(isFranly);
-			Application.Run(new FrmEmpleados(isFranly));
+			Application.Run(new FrmNomina(isFranly));
 
 		}
 	}
