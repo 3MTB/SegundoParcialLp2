@@ -39,12 +39,12 @@
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Font = new Font("Century Gothic", 36.2F);
+			label1.Font = new Font("Century Gothic", 36F, FontStyle.Italic, GraphicsUnit.Point, 0);
 			label1.Location = new Point(351, 75);
 			label1.Name = "label1";
-			label1.Size = new Size(212, 75);
+			label1.Size = new Size(209, 71);
 			label1.TabIndex = 0;
-			label1.Text = "Home";
+			label1.Text = "HOME";
 			// 
 			// lblDate
 			// 

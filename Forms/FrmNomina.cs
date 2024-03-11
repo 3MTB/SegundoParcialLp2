@@ -15,20 +15,18 @@ namespace SegundoParcialLp2.Forms
 {
 	public partial class FrmNomina : Form
 	{
-		public bool isFranly { get; set; }
-		public FrmNomina(bool isFranly)
+		public FrmNomina()
 		{
 			InitializeComponent();
-			this.isFranly = isFranly;
 		}
 
 		private void FrmNomina_Load(object sender, EventArgs e)
 		{
 			string[] tipoNominas = ["Semanal", "Quincenal", "Mensual"];
 			cbTipoNomina.DataSource = tipoNominas;
-			cbIdCxc.DataSource = gestorCxc.GetCxcs(isFranly);
+			cbIdCxc.DataSource = gestorCxc.GetCxcs();
 			cbIdCxc.DisplayMember = "ID";
-			cbIdEmpleado.DataSource = gestorEmpleado.GetEmpleados(isFranly);
+			cbIdEmpleado.DataSource = gestorEmpleado.GetEmpleados();
 			cbIdEmpleado.DisplayMember = "Nombre";
 
 			cbAFP.DataSource = Functions.aFPs;
@@ -38,7 +36,7 @@ namespace SegundoParcialLp2.Forms
 		private void ActualizaDgNomina()
 		{
 			dgvNomina.DataSource = null;
-			dgvNomina.DataSource = gestorNomina.GetNominas(isFranly);
+			dgvNomina.DataSource = gestorNomina.GetNominas();
 		}
 
 		private void btnAgregar_Click(object sender, EventArgs e)
@@ -62,7 +60,7 @@ namespace SegundoParcialLp2.Forms
 							if (decimal.TryParse(tbSeguroSocial.Text, out decimal seguroSocial))
 							{
 								Nomina nomina = new Nomina(cbTipoNomina.Text, empleado.ID, afp.descontar, cxc.ID, seguroSocial);
-								gestorNomina.InsertNomina(nomina, isFranly);
+								gestorNomina.InsertNomina(nomina);
 								ActualizaDgNomina();
 							}
 							else
@@ -90,6 +88,12 @@ namespace SegundoParcialLp2.Forms
 			{
 				MessageBox.Show($"FALLO AL MOMENTO DE PROCESAR LOS DATOS DE NOMINA:::{e.Message}");
 			}
+		}
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			tbSeguroSocial.Text = string.Empty;
+			tbSueldoNeto.Text = string.Empty;
 		}
 	}
 }

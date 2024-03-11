@@ -11,11 +11,11 @@ namespace SegundoParcialLp2.Data.Gestor
 {
 	public class gestorNomina
 	{
-		public static void InsertNomina(Nomina nomina, bool isFranly)
+		public static void InsertNomina(Nomina nomina)
 		{
 			try
 			{
-				var conex = new AmbarDataBase(isFranly).GetConection();
+				var conex = new AmbarDataBase().GetConection();
 				if (conex != null)
 				{
 					using (conex)
@@ -25,7 +25,7 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.ExecuteNonQuery();
 						conex.Close();
 						MessageBox.Show("Success add nomina", "Success");
-						DatosLocales.ActualizaRegistroNomina(isFranly);
+						DatosLocales.ActualizaRegistroNomina();
 					}
 				}
 			}
@@ -34,9 +34,9 @@ namespace SegundoParcialLp2.Data.Gestor
 				MessageBox.Show($"Algo fallo al momento de insertar la nomina:::\n{e.ToString()}");
 			}
 		}
-		public static List<Nomina> GetNominas(bool IsFranly)
+		public static List<Nomina> GetNominas()
 		{
-			DatosLocales.ActualizaRegistroNomina(IsFranly);
+			DatosLocales.ActualizaRegistroNomina();
 
 			return DatosLocales.nominas;
 		}

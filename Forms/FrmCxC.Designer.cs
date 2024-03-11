@@ -29,9 +29,6 @@
 		private void InitializeComponent()
 		{
 			CB_IdEmpleado = new ComboBox();
-			btnBorrar = new Button();
-			btnClear = new Button();
-			btnModificar = new Button();
 			btnAgregar = new Button();
 			DGV_Cxc = new DataGridView();
 			Dt_FechaPrestamo = new DateTimePicker();
@@ -52,58 +49,16 @@
 			CB_IdEmpleado.Size = new Size(206, 28);
 			CB_IdEmpleado.TabIndex = 97;
 			// 
-			// btnBorrar
-			// 
-			btnBorrar.BackColor = Color.DarkRed;
-			btnBorrar.FlatAppearance.MouseOverBackColor = Color.Red;
-			btnBorrar.FlatStyle = FlatStyle.Flat;
-			btnBorrar.ForeColor = Color.White;
-			btnBorrar.Location = new Point(697, 151);
-			btnBorrar.Margin = new Padding(3, 4, 3, 4);
-			btnBorrar.Name = "btnBorrar";
-			btnBorrar.Size = new Size(151, 51);
-			btnBorrar.TabIndex = 96;
-			btnBorrar.Text = "Borrar";
-			btnBorrar.UseVisualStyleBackColor = false;
-			// 
-			// btnClear
-			// 
-			btnClear.BackColor = Color.Teal;
-			btnClear.FlatAppearance.MouseOverBackColor = Color.CadetBlue;
-			btnClear.FlatStyle = FlatStyle.Flat;
-			btnClear.ForeColor = Color.White;
-			btnClear.Location = new Point(697, 92);
-			btnClear.Margin = new Padding(3, 4, 3, 4);
-			btnClear.Name = "btnClear";
-			btnClear.Size = new Size(151, 51);
-			btnClear.TabIndex = 95;
-			btnClear.Text = "Limpiar";
-			btnClear.UseVisualStyleBackColor = false;
-			// 
-			// btnModificar
-			// 
-			btnModificar.BackColor = Color.Teal;
-			btnModificar.FlatAppearance.MouseOverBackColor = Color.CadetBlue;
-			btnModificar.FlatStyle = FlatStyle.Flat;
-			btnModificar.ForeColor = Color.White;
-			btnModificar.Location = new Point(527, 152);
-			btnModificar.Margin = new Padding(3, 4, 3, 4);
-			btnModificar.Name = "btnModificar";
-			btnModificar.Size = new Size(151, 51);
-			btnModificar.TabIndex = 94;
-			btnModificar.Text = "Modificar";
-			btnModificar.UseVisualStyleBackColor = false;
-			// 
 			// btnAgregar
 			// 
 			btnAgregar.BackColor = Color.Teal;
 			btnAgregar.FlatAppearance.MouseOverBackColor = Color.CadetBlue;
 			btnAgregar.FlatStyle = FlatStyle.Flat;
 			btnAgregar.ForeColor = Color.White;
-			btnAgregar.Location = new Point(527, 92);
+			btnAgregar.Location = new Point(612, 119);
 			btnAgregar.Margin = new Padding(3, 4, 3, 4);
 			btnAgregar.Name = "btnAgregar";
-			btnAgregar.Size = new Size(151, 51);
+			btnAgregar.Size = new Size(182, 77);
 			btnAgregar.TabIndex = 93;
 			btnAgregar.Text = "Agregar";
 			btnAgregar.UseVisualStyleBackColor = false;
@@ -114,6 +69,7 @@
 			DGV_Cxc.BackgroundColor = Color.White;
 			DGV_Cxc.BorderStyle = BorderStyle.Fixed3D;
 			DGV_Cxc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			DGV_Cxc.Enabled = false;
 			DGV_Cxc.Location = new Point(48, 253);
 			DGV_Cxc.Margin = new Padding(3, 4, 3, 4);
 			DGV_Cxc.Name = "DGV_Cxc";
@@ -177,9 +133,6 @@
 			ClientSize = new Size(914, 952);
 			Controls.Add(CB_TotalCxC);
 			Controls.Add(CB_IdEmpleado);
-			Controls.Add(btnBorrar);
-			Controls.Add(btnClear);
-			Controls.Add(btnModificar);
 			Controls.Add(btnAgregar);
 			Controls.Add(DGV_Cxc);
 			Controls.Add(Dt_FechaPrestamo);
@@ -198,9 +151,6 @@
 
 		#endregion
 		private ComboBox CB_IdEmpleado;
-        private Button btnBorrar;
-        private Button btnClear;
-        private Button btnModificar;
         private Button btnAgregar;
         private DataGridView DGV_Cxc;
         private DateTimePicker Dt_FechaPrestamo;

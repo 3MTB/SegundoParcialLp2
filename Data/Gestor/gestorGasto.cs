@@ -11,11 +11,11 @@ namespace SegundoParcialLp2.Data.Gestor
 {
 	public class gestorGasto
 	{
-		public static void InsertaGasto(Gasto gasto, bool isFranly)
+		public static void InsertaGasto(Gasto gasto)
 		{
 			try
 			{
-				var conex = new AmbarDataBase(isFranly).GetConection();
+				var conex = new AmbarDataBase().GetConection();
 				if (conex != null)
 				{
 					using (conex)
@@ -36,7 +36,7 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.ExecuteNonQuery();
 						conex.Close();
 						MessageBox.Show("Add - Gasto");
-						DatosLocales.ActualizaRegistroGasto(isFranly);
+						DatosLocales.ActualizaRegistroGasto();
 					}
 				}
 			}
@@ -47,9 +47,9 @@ namespace SegundoParcialLp2.Data.Gestor
 
 		}
 
-		public static List<Gasto> getGastos(bool IsFranly)
+		public static List<Gasto> getGastos()
 		{
-			DatosLocales.ActualizaRegistroGasto(IsFranly);
+			DatosLocales.ActualizaRegistroGasto();
 			return DatosLocales.gastos;
 		}
 	}

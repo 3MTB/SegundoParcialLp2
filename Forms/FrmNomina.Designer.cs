@@ -28,9 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			btnBorrar = new Button();
 			btnClear = new Button();
-			btnModificar = new Button();
 			btnAgregar = new Button();
 			dgvNomina = new DataGridView();
 			tbSueldoNeto = new TextBox();
@@ -48,20 +46,6 @@
 			((System.ComponentModel.ISupportInitialize)dgvNomina).BeginInit();
 			SuspendLayout();
 			// 
-			// btnBorrar
-			// 
-			btnBorrar.BackColor = Color.DarkRed;
-			btnBorrar.FlatAppearance.MouseOverBackColor = Color.Red;
-			btnBorrar.FlatStyle = FlatStyle.Flat;
-			btnBorrar.ForeColor = Color.White;
-			btnBorrar.Location = new Point(718, 823);
-			btnBorrar.Margin = new Padding(3, 4, 3, 4);
-			btnBorrar.Name = "btnBorrar";
-			btnBorrar.Size = new Size(146, 51);
-			btnBorrar.TabIndex = 79;
-			btnBorrar.Text = "Borrar";
-			btnBorrar.UseVisualStyleBackColor = false;
-			// 
 			// btnClear
 			// 
 			btnClear.BackColor = Color.Teal;
@@ -75,20 +59,7 @@
 			btnClear.TabIndex = 78;
 			btnClear.Text = "Limpiar";
 			btnClear.UseVisualStyleBackColor = false;
-			// 
-			// btnModificar
-			// 
-			btnModificar.BackColor = Color.Teal;
-			btnModificar.FlatAppearance.MouseOverBackColor = Color.CadetBlue;
-			btnModificar.FlatStyle = FlatStyle.Flat;
-			btnModificar.ForeColor = Color.White;
-			btnModificar.Location = new Point(551, 823);
-			btnModificar.Margin = new Padding(3, 4, 3, 4);
-			btnModificar.Name = "btnModificar";
-			btnModificar.Size = new Size(146, 51);
-			btnModificar.TabIndex = 77;
-			btnModificar.Text = "Modificar";
-			btnModificar.UseVisualStyleBackColor = false;
+			btnClear.Click += btnClear_Click;
 			// 
 			// btnAgregar
 			// 
@@ -110,6 +81,7 @@
 			dgvNomina.BackgroundColor = Color.White;
 			dgvNomina.BorderStyle = BorderStyle.Fixed3D;
 			dgvNomina.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgvNomina.Enabled = false;
 			dgvNomina.Location = new Point(51, 340);
 			dgvNomina.Margin = new Padding(3, 4, 3, 4);
 			dgvNomina.Name = "dgvNomina";
@@ -247,9 +219,7 @@
 			Controls.Add(cbIdEmpleado);
 			Controls.Add(cbTipoNomina);
 			Controls.Add(tbSeguroSocial);
-			Controls.Add(btnBorrar);
 			Controls.Add(btnClear);
-			Controls.Add(btnModificar);
 			Controls.Add(btnAgregar);
 			Controls.Add(dgvNomina);
 			Controls.Add(tbSueldoNeto);
@@ -270,10 +240,7 @@
 		}
 
 		#endregion
-
-		private Button btnBorrar;
-        private Button btnClear;
-        private Button btnModificar;
+		private Button btnClear;
         private Button btnAgregar;
         private DataGridView dgvNomina;
         private TextBox tbSueldoNeto;

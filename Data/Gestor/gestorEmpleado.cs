@@ -11,7 +11,7 @@ namespace SegundoParcialLp2.Data.Gestor
 {
 	public class gestorEmpleado
 	{
-		public static void InsertaEmpleado(Empleado employee, bool isFranly)
+		public static void InsertaEmpleado(Empleado employee)
 		{
 
 			try
@@ -21,7 +21,7 @@ namespace SegundoParcialLp2.Data.Gestor
 					MessageBox.Show("Ya existe un empleado registrado con dichos datos");
 					return;
 				}
-				var conex = new AmbarDataBase(isFranly).GetConection();
+				var conex = new AmbarDataBase().GetConection();
 				if (conex != null)
 				{
 					using (conex)
@@ -45,7 +45,7 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.ExecuteNonQuery();
 						conex.Close();
 
-						DatosLocales.ActualizaRegistroEmpleados(isFranly);
+						DatosLocales.ActualizaRegistroEmpleados();
 						MessageBox.Show("Empleado agregado", "Success");
 
 					}
@@ -58,9 +58,9 @@ namespace SegundoParcialLp2.Data.Gestor
 
 		}
 
-		public static List<Empleado> GetEmpleados(bool IsFranly)
+		public static List<Empleado> GetEmpleados()
 		{
-			DatosLocales.ActualizaRegistroEmpleados(IsFranly);
+			DatosLocales.ActualizaRegistroEmpleados();
 
 			return DatosLocales.empleados;
 		}

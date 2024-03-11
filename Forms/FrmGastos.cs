@@ -16,11 +16,9 @@ namespace SegundoParcialLp2.Forms
 {
 	public partial class FrmGastos : Form
 	{
-		public bool isFranly { get; set; }
-		public FrmGastos(bool isFranly)
+		public FrmGastos()
 		{
 			InitializeComponent();
-			this.isFranly = isFranly;
 		}
 
 		private void FrmGastos_Load(object sender, EventArgs e)
@@ -43,7 +41,7 @@ namespace SegundoParcialLp2.Forms
 			if (checkPagaNomina.Checked)
 			{
 				cbNomina.DataSource = null;
-				cbNomina.DataSource = gestorNomina.GetNominas(isFranly);
+				cbNomina.DataSource = gestorNomina.GetNominas();
 				cbNomina.DisplayMember = "ID";
 			}
 			cbNomina.Visible = checkPagaNomina.Checked;
@@ -62,7 +60,7 @@ namespace SegundoParcialLp2.Forms
 			if (VerificaString(CB_NumeroCaja.Text) && int.TryParse(CB_NumeroCaja.Text, out int numeroCaja) && VerificaString(TB_ConceptoGastos.Text) && decimal.TryParse(tbTotalGasto.Text, out decimal total) && VerificaString(CB_QuienAutoriza.Text) && VerificaString(TB_QuienRecibe.Text) && Dt_FechaGasto.Value <= DateTime.Now)
 			{
 				Gasto gasto = new Gasto(numeroCaja, TB_ConceptoGastos.Text, total, CB_QuienAutoriza.Text, TB_QuienRecibe.Text, DateOnly.FromDateTime(Dt_FechaGasto.Value));
-				gestorGasto.InsertaGasto(gasto, isFranly);
+				gestorGasto.InsertaGasto(gasto);
 			}
 			else
 			{
@@ -74,7 +72,7 @@ namespace SegundoParcialLp2.Forms
 				else if (!int.TryParse(CB_NumeroCaja.Text, out _))
 				{
 					CB_NumeroCaja.Focus();
-					MessageBox.Show("Numero Caja Solo acepta numeros enteros", "CAMPO VACIO");
+					MessageBox.Show("Numero Caja Solo acepta números enteros", "CAMPO VACIO");
 				}
 				else if (!VerificaString(TB_ConceptoGastos.Text))
 				{
@@ -130,8 +128,14 @@ namespace SegundoParcialLp2.Forms
 		private void ActualizaGastos()
 		{
 			DGV_Gastos.DataSource = null;
-			DGV_Gastos.DataSource = gestorGasto.getGastos(isFranly);
+			DGV_Gastos.DataSource = gestorGasto.getGastos();
 		}
 
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			TB_ConceptoGastos.Text = string.Empty;
+			TB_QuienRecibe.Text = string.Empty;
+			checkPagaNomina.Checked = false;
+		}
 	}
 }

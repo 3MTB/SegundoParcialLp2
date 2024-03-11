@@ -28,16 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			btnBorrar = new Button();
 			btnClear = new Button();
-			btnModificar = new Button();
 			btnAgregar = new Button();
 			DGV_Empleados = new DataGridView();
 			DataTimeEmpleado = new DateTimePicker();
 			MTB_Cedula = new MaskedTextBox();
 			MTB_Telefono = new MaskedTextBox();
 			label10 = new Label();
-			TB_Sueldo = new TextBox();
 			label9 = new Label();
 			TB_Direccion = new TextBox();
 			label8 = new Label();
@@ -53,22 +50,10 @@
 			CB_Departamento = new ComboBox();
 			TB_Nombre = new TextBox();
 			label1 = new Label();
+			TB_Sueldo = new NumericUpDown();
 			((System.ComponentModel.ISupportInitialize)DGV_Empleados).BeginInit();
+			((System.ComponentModel.ISupportInitialize)TB_Sueldo).BeginInit();
 			SuspendLayout();
-			// 
-			// btnBorrar
-			// 
-			btnBorrar.BackColor = Color.DarkRed;
-			btnBorrar.FlatAppearance.MouseOverBackColor = Color.Red;
-			btnBorrar.FlatStyle = FlatStyle.Flat;
-			btnBorrar.ForeColor = Color.White;
-			btnBorrar.Location = new Point(721, 813);
-			btnBorrar.Margin = new Padding(3, 4, 3, 4);
-			btnBorrar.Name = "btnBorrar";
-			btnBorrar.Size = new Size(146, 51);
-			btnBorrar.TabIndex = 54;
-			btnBorrar.Text = "Borrar";
-			btnBorrar.UseVisualStyleBackColor = false;
 			// 
 			// btnClear
 			// 
@@ -84,20 +69,6 @@
 			btnClear.Text = "Limpiar";
 			btnClear.UseVisualStyleBackColor = false;
 			btnClear.Click += btnClear_Click;
-			// 
-			// btnModificar
-			// 
-			btnModificar.BackColor = Color.Teal;
-			btnModificar.FlatAppearance.MouseOverBackColor = Color.CadetBlue;
-			btnModificar.FlatStyle = FlatStyle.Flat;
-			btnModificar.ForeColor = Color.White;
-			btnModificar.Location = new Point(554, 813);
-			btnModificar.Margin = new Padding(3, 4, 3, 4);
-			btnModificar.Name = "btnModificar";
-			btnModificar.Size = new Size(146, 51);
-			btnModificar.TabIndex = 52;
-			btnModificar.Text = "Modificar";
-			btnModificar.UseVisualStyleBackColor = false;
 			// 
 			// btnAgregar
 			// 
@@ -119,12 +90,14 @@
 			DGV_Empleados.BackgroundColor = Color.White;
 			DGV_Empleados.BorderStyle = BorderStyle.Fixed3D;
 			DGV_Empleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			DGV_Empleados.Location = new Point(55, 331);
+			DGV_Empleados.Enabled = false;
+			DGV_Empleados.Location = new Point(12, 331);
 			DGV_Empleados.Margin = new Padding(3, 4, 3, 4);
 			DGV_Empleados.Name = "DGV_Empleados";
 			DGV_Empleados.RowHeadersWidth = 51;
-			DGV_Empleados.Size = new Size(813, 475);
+			DGV_Empleados.Size = new Size(890, 475);
 			DGV_Empleados.TabIndex = 50;
+			DGV_Empleados.CellContentClick += DGV_Empleados_CellContentClick;
 			// 
 			// DataTimeEmpleado
 			// 
@@ -159,19 +132,9 @@
 			label10.Font = new Font("Century Gothic", 14.25F);
 			label10.Location = new Point(445, 187);
 			label10.Name = "label10";
-			label10.Size = new Size(233, 30);
+			label10.Size = new Size(168, 30);
 			label10.TabIndex = 46;
-			label10.Text = "Fecha Contratado";
-			// 
-			// TB_Sueldo
-			// 
-			TB_Sueldo.Location = new Point(661, 148);
-			TB_Sueldo.Margin = new Padding(0);
-			TB_Sueldo.Multiline = true;
-			TB_Sueldo.Name = "TB_Sueldo";
-			TB_Sueldo.Size = new Size(206, 29);
-			TB_Sueldo.TabIndex = 45;
-			TB_Sueldo.KeyPress += TB_Sueldo_KeyPress;
+			label10.Text = "Fecha Contr.";
 			// 
 			// label9
 			// 
@@ -255,10 +218,11 @@
 			label4.AutoSize = true;
 			label4.Font = new Font("Century Gothic", 14.25F);
 			label4.Location = new Point(55, 187);
+			label4.Margin = new Padding(0);
 			label4.Name = "label4";
-			label4.Size = new Size(189, 30);
+			label4.Size = new Size(101, 30);
 			label4.TabIndex = 36;
-			label4.Text = "Departamento";
+			label4.Text = "Depart.";
 			// 
 			// label3
 			// 
@@ -317,22 +281,30 @@
 			label1.TabIndex = 30;
 			label1.Text = "Nombre";
 			// 
+			// TB_Sueldo
+			// 
+			TB_Sueldo.Location = new Point(662, 151);
+			TB_Sueldo.Margin = new Padding(0);
+			TB_Sueldo.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
+			TB_Sueldo.Name = "TB_Sueldo";
+			TB_Sueldo.Size = new Size(150, 27);
+			TB_Sueldo.TabIndex = 54;
+			TB_Sueldo.ThousandsSeparator = true;
+			// 
 			// FrmEmpleados
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(914, 952);
-			Controls.Add(btnBorrar);
+			Controls.Add(TB_Sueldo);
 			Controls.Add(btnClear);
-			Controls.Add(btnModificar);
 			Controls.Add(btnAgregar);
 			Controls.Add(DGV_Empleados);
 			Controls.Add(DataTimeEmpleado);
 			Controls.Add(MTB_Cedula);
 			Controls.Add(MTB_Telefono);
 			Controls.Add(label10);
-			Controls.Add(TB_Sueldo);
 			Controls.Add(label9);
 			Controls.Add(TB_Direccion);
 			Controls.Add(label8);
@@ -355,21 +327,19 @@
 			Text = "Empleados";
 			Load += FrmEmpleados_Load;
 			((System.ComponentModel.ISupportInitialize)DGV_Empleados).EndInit();
+			((System.ComponentModel.ISupportInitialize)TB_Sueldo).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
 
 		#endregion
-		private Button btnBorrar;
-        private Button btnClear;
-        private Button btnModificar;
+		private Button btnClear;
         private Button btnAgregar;
         private DataGridView DGV_Empleados;
         private DateTimePicker DataTimeEmpleado;
         private MaskedTextBox MTB_Cedula;
         private MaskedTextBox MTB_Telefono;
         private Label label10;
-        private TextBox TB_Sueldo;
         private Label label9;
         private TextBox TB_Direccion;
         private Label label8;
@@ -385,5 +355,6 @@
         private ComboBox CB_Departamento;
         private TextBox TB_Nombre;
         private Label label1;
+		private NumericUpDown TB_Sueldo;
 	}
 }

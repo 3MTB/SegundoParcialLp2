@@ -14,11 +14,9 @@ namespace SegundoParcialLp2.Forms
 {
 	public partial class FrmCxC : Form
 	{
-		public bool isFranly { get; set; }
-		public FrmCxC(bool isFranly)
+		public FrmCxC()
 		{
 			InitializeComponent();
-			this.isFranly = isFranly;
 		}
 
 		private void FrmCxC_Load(object sender, EventArgs e)
@@ -27,7 +25,7 @@ namespace SegundoParcialLp2.Forms
 		}
 		private void MyInitializer()
 		{
-			CB_IdEmpleado.DataSource = gestorEmpleado.GetEmpleados(isFranly);
+			CB_IdEmpleado.DataSource = gestorEmpleado.GetEmpleados();
 			CB_IdEmpleado.DisplayMember = "Nombre";
 			ActualizaDgCxc();
 		}
@@ -49,7 +47,7 @@ namespace SegundoParcialLp2.Forms
 						if (Dt_FechaPrestamo.Value <= DateTime.Now)
 						{
 							CxC cxc = new CxC(empleado.ID, total, DateOnly.FromDateTime(Dt_FechaPrestamo.Value));
-							gestorCxc.InsertaCxc(cxc, isFranly);
+							gestorCxc.InsertaCxc(cxc);
 
 						}
 						else
@@ -80,7 +78,7 @@ namespace SegundoParcialLp2.Forms
 		private void ActualizaDgCxc()
 		{
 			DGV_Cxc.DataSource = null;
-			DGV_Cxc.DataSource = gestorCxc.GetCxcs(isFranly);
+			DGV_Cxc.DataSource = gestorCxc.GetCxcs();
 		}
 	}
 }

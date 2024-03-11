@@ -11,12 +11,11 @@ namespace SegundoParcialLp2.Data.Gestor
 {
 	public class gestorCxc
 	{
-		//TODO: COntuinuar here Insert And Select
-		public static void InsertaCxc(CxC cxc, bool isFranly)
+		public static void InsertaCxc(CxC cxc)
 		{
 			try
 			{
-				var conex = new AmbarDataBase(isFranly).GetConection();
+				var conex = new AmbarDataBase().GetConection();
 				if (conex != null)
 				{
 					using (conex)
@@ -34,7 +33,7 @@ namespace SegundoParcialLp2.Data.Gestor
 						cmd.ExecuteNonQuery();
 						conex.Close();
 						MessageBox.Show("Add - CxC - Success", "Success");
-						DatosLocales.ActualizaRegistroCxc(isFranly);
+						DatosLocales.ActualizaRegistroCxc();
 					}
 				}
 			}
@@ -45,9 +44,9 @@ namespace SegundoParcialLp2.Data.Gestor
 
 		}
 
-		public static List<CxC> GetCxcs(bool IsFranly)
+		public static List<CxC> GetCxcs()
 		{
-			DatosLocales.ActualizaRegistroCxc(IsFranly);
+			DatosLocales.ActualizaRegistroCxc();
 			return DatosLocales.cxcs;
 		}
 

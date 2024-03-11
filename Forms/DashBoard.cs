@@ -12,11 +12,9 @@ namespace SegundoParcialLp2.Forms
 {
 	public partial class DashBoard : Form
 	{
-		public bool isFranly { get; set; }
-		public DashBoard(bool isFranly)
+		public DashBoard()
 		{
 			InitializeComponent();
-			this.isFranly = isFranly;
 		}
 		private Form activateForm = null!;
 
@@ -44,33 +42,27 @@ namespace SegundoParcialLp2.Forms
 
 		private void btnEmpleados_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new FrmEmpleados(isFranly), sender);
+			OpenChildForm(new FrmEmpleados(), sender);
 		}
 
 		private void btnInicio_Click(object sender, EventArgs e)
 		{
 			OpenChildForm(new FrmHome(), sender);
-
-			/*if (activateForm != null)
-			{
-				activateForm.Close();
-				LbT_NameVtn.Text = "Inicio";
-			}*/
 		}
 
 		private void btnGastos_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new FrmGastos(isFranly), sender);
+			OpenChildForm(new FrmGastos(), sender);
 		}
 
 		private void btnCxC_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new FrmCxC(isFranly), sender);
+			OpenChildForm(new FrmCxC(), sender);
 		}
 
 		private void btnNomina_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new FrmNomina(isFranly), sender);
+			OpenChildForm(new FrmNomina(), sender);
 		}
 
 		private void DashBoard_Load(object sender, EventArgs e)

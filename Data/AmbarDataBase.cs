@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using SegundoParcialLp2.Models;
 
 namespace SegundoParcialLp2.Data
 {
@@ -16,9 +17,10 @@ namespace SegundoParcialLp2.Data
 
 		private static SqlConnection conexGeneral = new SqlConnection();
 
-		public AmbarDataBase(bool isFranly)
+		public AmbarDataBase()
 		{
-			if (isFranly)
+
+			if (Environment.UserDomainName == User.Franly)
 			{
 				conectionString = "Server=DESKTOP-SQ41TDR\\SQLEXPRESS01; Database=ambarBaseDato; Trusted_Connection=True;TrustServerCertificate=True";
 			}

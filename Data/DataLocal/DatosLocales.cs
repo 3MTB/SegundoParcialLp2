@@ -11,11 +11,11 @@ namespace SegundoParcialLp2.Data.DataLocal
 		public static List<Gasto> gastos = new List<Gasto>();
 		public static List<Nomina> nominas = new List<Nomina>();
 
-		public static void ActualizaRegistroEmpleados(bool isFranly)
+		public static void ActualizaRegistroEmpleados()
 		{
 			try
 			{
-				var conex = new AmbarDataBase(isFranly).GetConection();
+				var conex = new AmbarDataBase().GetConection();
 				if (conex != null)
 				{
 					using (conex)
@@ -55,11 +55,11 @@ namespace SegundoParcialLp2.Data.DataLocal
 			}
 
 		}
-		public static void ActualizaRegistroCxc(bool isFranly)
+		public static void ActualizaRegistroCxc()
 		{
 			try
 			{
-				var conex = new AmbarDataBase(isFranly).GetConection();
+				var conex = new AmbarDataBase().GetConection();
 				if (conex != null)
 				{
 					using (conex)
@@ -93,11 +93,11 @@ namespace SegundoParcialLp2.Data.DataLocal
 			}
 
 		}
-		public static void ActualizaRegistroGasto(bool isFranly)
+		public static void ActualizaRegistroGasto()
 		{
 			try
 			{
-				var conex = new AmbarDataBase(isFranly).GetConection();
+				var conex = new AmbarDataBase().GetConection();
 				if (conex != null)
 				{
 					using (conex)
@@ -114,7 +114,7 @@ namespace SegundoParcialLp2.Data.DataLocal
 						foreach (DataRow x in dt.Rows)
 						{
 							int id = (int)x["Id"];
-							
+
 							int numeroCaja = (int)x["NumeroCaja"];
 							var conceptoGasto = x["ConceptoGasto"].ToString();
 							var totalGasto = (decimal)x["TotalGasto"];
@@ -133,11 +133,11 @@ namespace SegundoParcialLp2.Data.DataLocal
 			}
 
 		}
-		public static void ActualizaRegistroNomina(bool isFranly)
+		public static void ActualizaRegistroNomina()
 		{
 			try
 			{
-				var conex = new AmbarDataBase(isFranly).GetConection();
+				var conex = new AmbarDataBase().GetConection();
 				if (conex != null)
 				{
 					using (conex)

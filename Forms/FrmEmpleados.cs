@@ -6,20 +6,18 @@ namespace SegundoParcialLp2.Forms
 {
 	public partial class FrmEmpleados : Form
 	{
-		public bool isFranly { get; set; }
-		public FrmEmpleados(bool isFranly)
+		public FrmEmpleados()
 		{
 			InitializeComponent();
-			this.isFranly = isFranly;
 
 		}
 		public void MyIniciador()
 		{
 			List<string> departamentos = new List<string>(){
-   "Administracion", "Contabilidad","Limpieza"
+				"Administracion", "Contabilidad","Limpieza"
 			};
 			List<string> cargos = new List<string>(){
-   "Tecnico","Limpieza","Secretari@"
+				"Tecnico","Limpieza","Secretari@"
 			};
 			CB_Departamento.DataSource = departamentos;
 			CB_Cargo.DataSource = cargos;
@@ -28,7 +26,8 @@ namespace SegundoParcialLp2.Forms
 		private void ActualizaDgEmpleado()
 		{
 			DGV_Empleados.DataSource = null;
-			DGV_Empleados.DataSource = gestorEmpleado.GetEmpleados(isFranly);
+			DGV_Empleados.DataSource = gestorEmpleado.GetEmpleados();
+			DGV_Empleados.DataSource = gestorEmpleado.GetEmpleados();
 		}
 		private void btnAgregar_Click(object sender, EventArgs e)
 		{
@@ -36,7 +35,7 @@ namespace SegundoParcialLp2.Forms
 		}
 		private void VerificaEmpleado()
 		{
-			if (VerificaString(TB_Nombre.Text) && VerificaString(TB_Apellido.Text) && VerificaString(MTB_Cedula.Text) && VerificaString(CB_Departamento.Text) && VerificaString(CB_Cargo.Text) && VerificaString(TB_Correo.Text) && VerificaString(MTB_Telefono.Text) && VerificaString(TB_Direccion.Text) && decimal.TryParse(TB_Sueldo.Text, out decimal sueldo) && DataTimeEmpleado.Value <= DateTime.Now)
+			if (VerificaString(TB_Nombre.Text) && VerificaString(TB_Apellido.Text) && VerificaString(MTB_Cedula.Text) && VerificaString(CB_Departamento.Text) && VerificaString(CB_Cargo.Text) && VerificaString(TB_Correo.Text) && VerificaString(MTB_Telefono.Text) && VerificaString(TB_Direccion.Text) && decimal.TryParse(TB_Sueldo.Value.ToString(), out decimal sueldo) && DataTimeEmpleado.Value <= DateTime.Now)
 			{
 				string cedula = string.Empty;
 				foreach (char x in MTB_Cedula.Text.Replace('-', ' '))
@@ -46,8 +45,8 @@ namespace SegundoParcialLp2.Forms
 						cedula += x;
 					}
 				}
-				Empleado empleado = new Empleado(TB_Nombre.Text, TB_Apellido.Text,cedula, CB_Departamento.Text, CB_Cargo.Text, TB_Correo.Text, MTB_Telefono.Text, TB_Direccion.Text, sueldo, DateOnly.FromDateTime(DataTimeEmpleado.Value));
-				gestorEmpleado.InsertaEmpleado(empleado, isFranly);
+				Empleado empleado = new Empleado(TB_Nombre.Text, TB_Apellido.Text, cedula, CB_Departamento.Text, CB_Cargo.Text, TB_Correo.Text, MTB_Telefono.Text, TB_Direccion.Text, sueldo, DateOnly.FromDateTime(DataTimeEmpleado.Value));
+				gestorEmpleado.InsertaEmpleado(empleado);
 				LimpiaCampos();
 				ActualizaDgEmpleado();
 
@@ -94,7 +93,7 @@ namespace SegundoParcialLp2.Forms
 					TB_Direccion.Focus();
 					MessageBox.Show("Ingresa una Dirección", "CAMPO VACIO");
 				}
-				else if (!decimal.TryParse(TB_Sueldo.Text, out decimal result))
+				else if (!decimal.TryParse(TB_Sueldo.Value.ToString(), out decimal result))
 				{
 					TB_Sueldo.Focus();
 					MessageBox.Show("Ingresa un sueldo Correcto", "CAMPO Incorrecto");
@@ -134,12 +133,17 @@ namespace SegundoParcialLp2.Forms
 			TB_Correo.Text = string.Empty;
 			MTB_Telefono.Text = string.Empty;
 			TB_Direccion.Text = string.Empty;
-			TB_Sueldo.Text = string.Empty;
+			TB_Sueldo.Value = TB_Sueldo.Minimum;
 		}
 
 		private void FrmEmpleados_Load(object sender, EventArgs e)
 		{
 			MyIniciador();
+		}
+
+		private void DGV_Empleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 	}
 }

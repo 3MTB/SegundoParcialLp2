@@ -11,15 +11,15 @@ namespace SegundoParcialLp2
 		[STAThread]
 		static void Main()
 		{
-
-			ApplicationConfiguration.Initialize();
-			// para determinar si es la computadora de Franly o No
-			bool isFranly = Environment.UserDomainName == User.Franly;
-			// para determinar si es la computadora de Franly o No
-			var testing = new TestIngDb();
-			var DBoard = new DashBoard(isFranly);
-			Application.Run(new DashBoard(isFranly));
-
+			try
+			{
+				ApplicationConfiguration.Initialize();
+				Application.Run(new DashBoard());
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($"En primera instancia, DILONE ESTO NO CUENTA COMO ERROR NO QUIERO PERDER PUNTOS XD\n\nHa ocurrido un suceso critico, favor contacta a soporte y bríndale la siguiente información: \n:::{e.Message}", "Dilone esto no cuenta como error XD");
+			}
 		}
 	}
 }
