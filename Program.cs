@@ -16,8 +16,9 @@ namespace SegundoParcialLp2
 			// para determinar si es la computadora de Franly o No
 			bool isFranly = Environment.UserDomainName == User.Franly;
 			// para determinar si es la computadora de Franly o No
+			var testing = new TestIngDb();
 			var DBoard = new DashBoard(isFranly);
-			Application.Run(DBoard);
+			Application.Run(new DashBoard(isFranly));
 
 		}
 	}
