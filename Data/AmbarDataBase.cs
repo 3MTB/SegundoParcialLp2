@@ -22,7 +22,7 @@ namespace SegundoParcialLp2.Data
 
 			if (Environment.UserDomainName == User.Franly)
 			{
-				conectionString = "Server=DESKTOP-SQ41TDR\\SQLEXPRESS01; Database=ambarBaseDato; Trusted_Connection=True;TrustServerCertificate=True";
+				conectionString = "Server=DESKTOP-SQ41TDR\\SQLEXPRESS01; Database=ultimoAMBA; Trusted_Connection=True;TrustServerCertificate=True";
 			}
 			else
 			{
